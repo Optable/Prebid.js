@@ -89,14 +89,23 @@ export const spec = {
       cur: ['USD'],
       tmax: (timeout - 300),
       test: this.test() || 0,
+      user: {},
       site: {
         publisher: { id: String(bidRequest[0].params.memberid) || null }
       }
     }
 
     try {
+      Object.assign(dmxRequest.user, config.getConfig('fpd.user'));
+      Object.assign(dmxRequest.site, config.getConfig('fpd.context'));
+    } catch (e) {}
+
+    try {
       let params = config.getConfig('dmx');
-      dmxRequest.user = params.user || {};
+
+      let user = params.user || {};
+      dmxRequest.user = { ...dmxRequest.user, ...user }
+
       let site = params.site || {};
       dmxRequest.site = { ...dmxRequest.site, ...site }
     } catch (e) {
