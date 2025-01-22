@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Optable RTD submodule example - Prebid.js</title>
+     <!--Optable bundle-->
+    <script async src="https://prebidtest.solutions.cdn.optable.co/public-assets/prebidtest-sdk.js"></script>
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <script async src="../../build/dev/prebid.js"></script>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            color: #222;
+            font-size: 1.5em;
+            line-height: 1.6;
+            font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .delim {
+            margin: 27px 0 35px;
+            border-width: 0;
+            border-top: 1px solid #e1e1e1;
+        }
+
+        h1 {
+            font-size: 30px;
+            line-height: 1.35;
+            font-weight: 100;
+            letter-spacing: -0.5px;
+        }
+
+        a {
+            color: #1eaedb;
+            text-decoration: underline;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 0;
+            }
+        }
+    </style>
+    <script>
+        var PREBID_TIMEOUT = 1000;
+        var FAILSAFE_TIMEOUT = 3000;
+
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+
+        var pbjs = pbjs || {};
+        pbjs.que = pbjs.que || [];
+
+        function initAdserver() {
+            if (pbjs.initAdserverSet) return;
+
+            googletag.cmd.push(function () {
+                pbjs.que.push(function () {
+                    pbjs.setTargetingForGPTAsync();
+                    googletag.pubads().refresh();
+                });
+            });
+
+            pbjs.initAdserverSet = true;
+        }
+
+        pbjs.que.push(function () {
+            var adUnits = [{
+                code: 'div-banner-native-1',
+                mediaTypes: {
+                    banner: {
+                        sizes: [
+                            [300, 250]
+                        ]
+                    },
+                    native: {
+                        type: 'image'
+                    },
+                },
+                bids: [{
+                    bidder: 'appnexus',
+                    params: {
+                        placementId: 13232392,
+                    }
+                }]
+            },
+                {
+                    code: 'div-banner-native-2',
+                    mediaTypes: {
+                        banner: {
+                            sizes: [
+                                [300, 250]
+                            ]
+                        },
+                        native: {
+                            title: {
+                                required: true
+                            },
+                            image: {
+                                required: true
+                            },
+                            sponsoredBy: {
+                                required: true
+                            }
+                        }
+                    },
+                    bids: [{
+                        bidder: 'appnexus',
+                        params: {
+                            placementId: 13232392,
+                        }
+                    }]
+                }
+            ];
+
+            pbjs.setConfig({
+                debug: true, // use only for testing, remove in production
+                realTimeData: {
+                    auctionDelay: 1000, // should be set lower in production use
+                    dataProviders: [
+                        {
+                            name: 'optable',
+                            waitForIt: true,
+                            params: {
+                                // bundleUrl: "https://prebidtest.solutions.cdn.optable.co/public-assets/prebidtest-sdk.js?hello=world",
+                            }
+                        }
+                    ]
+                },
+            });
+
+            pbjs.addAdUnits(adUnits);
+
+            pbjs.onEvent('bidRequested', function (data) {
+                //
+            });
+
+            pbjs.requestBids({
+                timeout: PREBID_TIMEOUT,
+                bidsBackHandler: function (bidResponses) {
+                    initAdserver();
+                }
+            });
+        });
+        setTimeout(initAdserver, FAILSAFE_TIMEOUT);
+    </script>
+
+    <script>
+        googletag.cmd.push(function () {
+            googletag
+                .defineSlot(
+                    '/19968336/prebid_multiformat_test', [
+                        [300, 250],
+                        [360, 360]
+                    ],
+                    'div-banner-native-1'
+                )
+                .addService(googletag.pubads());
+
+            googletag
+                .defineSlot(
+                    '/19968336/prebid_multiformat_test', [
+                        [300, 250],
+                        [360, 360]
+                    ],
+                    'div-banner-native-2'
+                )
+                .addService(googletag.pubads());
+
+            googletag.pubads().disableInitialLoad();
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+</head>
+<body>
+    <main class="container">
+        <div class="row">
+            <img
+                src="https://demo.optable.co/images/logo.png"
+                width="200"
+                alt="optable"
+                style="margin-top: 48px"/>
+            <hr class="delim" />
+        </div>
+        <div class="row">
+            <h1>Optable RTD module example</h1>
+        </div>
+    </main>
+</body>
+</html>
