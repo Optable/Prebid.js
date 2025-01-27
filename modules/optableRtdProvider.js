@@ -44,31 +44,28 @@ export const extractConfig = (moduleConfig, reqBidsConfigObj) => {
  * @param {Object} optableBundle Optable JS bundle
  * @param {Object} reqBidsConfigObj Bid request configuration object
  */
-export const mergeOptableData = (optableBundle, reqBidsConfigObj) => {
+export const mergeOptableData = async (optableBundle, reqBidsConfigObj) => {
   logWarn('Optable: ', optableBundle);
-  optableBundle.cmd.push(() => {
-    // Call Optable DCN for targeting data
-    optableBundle.instance.targeting().then((targetingData) => {
-      logWarn('Data from targeting(): ', targetingData);
-      const optableData = optableBundle.SDK.PrebidORTB2(targetingData);
-      logWarn('PrebidORTB2(targeting()): ', optableData);
-      mergeDeep(
-        reqBidsConfigObj.ortb2Fragments.global,
-        optableData,
-      );
-      logWarn('Prebid\'s global ORTB2 object after merge: ', reqBidsConfigObj.ortb2Fragments.global);
-    });
-  });
+
+  // Call Optable DCN for targeting data
+  const targetingData = await optableBundle.instance.targeting();
+
+  logWarn('Data from targeting(): ', targetingData);
+  const optableData = optableBundle.SDK.PrebidORTB2(targetingData);
+  logWarn('PrebidORTB2(targeting()): ', optableData);
+  mergeDeep(
+    reqBidsConfigObj.ortb2Fragments.global,
+    optableData,
+  );
+  logWarn('Prebid\'s global ORTB2 object after merge: ', reqBidsConfigObj.ortb2Fragments.global);
 
   // TODO: ask why `prebidORTB2` is not accessible
-  // P.S. ignore the way it's called, it's just a placeholder
-  // optableBundle.prebidORTB2().then((userData) => {
-  //   logWarn('User ortb2 data from targeting(): ', userData);
-  //   mergeDeep(
-  //     reqBidsConfigObj.ortb2Fragments.global,
-  //     userData,
-  //   );
-  // });
+  // const userData = await optableBundle.prebidORTB2();
+  // logWarn('User ortb2 data from targeting(): ', userData);
+  // mergeDeep(
+  //   reqBidsConfigObj.ortb2Fragments.global,
+  //   userData,
+  // );
 };
 
 /**
@@ -98,8 +95,7 @@ export const getBidRequestData = (reqBidsConfigObj, callback, moduleConfig, user
         logMessage('optable: ', optable);
         logMessage('reqBidsConfigObj: ', reqBidsConfigObj);
 
-        mergeOptableData(optable, reqBidsConfigObj);
-        callback();
+        mergeOptableData(optable, reqBidsConfigObj).then(callback);
       }, document);
     } else {
       // At this point, we assume that the Optable JS bundle is already
@@ -107,12 +103,11 @@ export const getBidRequestData = (reqBidsConfigObj, callback, moduleConfig, user
       // by passing the callback to the optable.cmd.push function.
       logMessage('Custom bundle URL not found in config');
       window.optable = window.optable || { cmd: [] };
-      window.optable.cmd.push(function() {
+      window.optable.cmd.push(() => {
         logMessage('Optable JS bundle found on the page');
         logMessage('optable: ', window.optable);
         logMessage('reqBidsConfigObj: ', reqBidsConfigObj);
-        mergeOptableData(window.optable, reqBidsConfigObj);
-        callback();
+        mergeOptableData(window.optable, reqBidsConfigObj).then(callback);
       });
     }
 
