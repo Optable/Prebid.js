@@ -40,15 +40,35 @@ export const extractConfig = (moduleConfig, reqBidsConfigObj) => {
 }
 
 /**
+ * Get data from Optable and merge it into the global ORTB2 object
  * @param {Object} optableBundle Optable JS bundle
  * @param {Object} reqBidsConfigObj Bid request configuration object
  */
 export const mergeOptableData = (optableBundle, reqBidsConfigObj) => {
-  // Get UID2 data from Optable and merge it into the global ORTB2 object
-  mergeDeep(
-    reqBidsConfigObj.ortb2Fragments.global.user.ext,
-    optableBundle.prebidORTB2FromCache(),
-  );
+  logWarn('Optable: ', optableBundle);
+  optableBundle.cmd.push(() => {
+    // Call Optable DCN for targeting data
+    optableBundle.instance.targeting().then((targetingData) => {
+      logWarn('Data from targeting(): ', targetingData);
+      const optableData = optableBundle.SDK.PrebidORTB2(targetingData);
+      logWarn('PrebidORTB2(targeting()): ', optableData);
+      mergeDeep(
+        reqBidsConfigObj.ortb2Fragments.global,
+        optableData,
+      );
+      logWarn('Prebid\'s global ORTB2 object after merge: ', reqBidsConfigObj.ortb2Fragments.global);
+    });
+  });
+
+  // TODO: ask why `prebidORTB2` is not accessible
+  // P.S. ignore the way it's called, it's just a placeholder
+  // optableBundle.prebidORTB2().then((userData) => {
+  //   logWarn('User ortb2 data from targeting(): ', userData);
+  //   mergeDeep(
+  //     reqBidsConfigObj.ortb2Fragments.global,
+  //     userData,
+  //   );
+  // });
 };
 
 /**
@@ -63,6 +83,7 @@ export const getBidRequestData = (reqBidsConfigObj, callback, moduleConfig, user
     const {bundleUrl, propagateTargeting} = extractConfig(moduleConfig, reqBidsConfigObj);
     logMessage('Optable JS bundle URL ', bundleUrl);
     logMessage('Propagate targeting: ', propagateTargeting);
+    logWarn('User consent: ', userConsent);
 
     if (bundleUrl) {
       // If bundleUrl is present, load the Optable JS bundle
