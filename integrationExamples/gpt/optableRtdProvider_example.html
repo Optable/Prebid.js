@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <title>Optable RTD submodule example - Prebid.js</title>
-     <!--Optable bundle-->
+    <!--CMP script-->
+    <script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/js/semiautomatic.min.js" data-cmp-cdid="f33f7a0192126" data-cmp-host="c.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="0"></script>
+    <!--Optable bundle-->
     <script async src="https://prebidtest.solutions.cdn.optable.co/public-assets/prebidtest-sdk.js"></script>
     <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
     <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
@@ -129,9 +131,14 @@
                             waitForIt: true,
                             params: {
                                 // bundleUrl: "https://prebidtest.solutions.cdn.optable.co/public-assets/prebidtest-sdk.js?hello=world",
+                                // adserverTargeting: false,
                             }
                         }
                     ]
+                },
+                consentManagement: {
+                    gpp: {},
+                    gdpr: {},
                 },
             });
 
@@ -191,6 +198,26 @@
         </div>
         <div class="row">
             <h1>Optable RTD module example</h1>
+        </div>
+
+        <h3>div-banner-native-1</h3>
+        <div id='div-banner-native-1'>
+            <p>No response</p>
+            <script type='text/javascript'>
+                googletag.cmd.push(function () {
+                    googletag.display('div-banner-native-1');
+                });
+            </script>
+        </div>
+
+        <h3>div-banner-native-2</h3>
+        <div id='div-banner-native-2'>
+            <p>No response</p>
+            <script type='text/javascript'>
+                googletag.cmd.push(function () {
+                    googletag.display('div-banner-native-2');
+                });
+            </script>
         </div>
     </main>
 </body>

@@ -15,11 +15,10 @@ const {logMessage, logWarn, logError} = prefixLog(LOG_PREFIX);
 /**
  * Extracts the parameters for Optable RTD module from the config object passed at instantiation
  * @param {Object} moduleConfig Configuration object for the module
- * @param {Object} reqBidsConfigObj Configuration object for bid request
  */
-export const extractConfig = (moduleConfig, reqBidsConfigObj) => {
+export const parseConfig = (moduleConfig) => {
   let bundleUrl = deepAccess(moduleConfig, 'params.bundleUrl', null);
-  let propagateTargeting = deepAccess(moduleConfig, 'params.propagateTargeting', false);
+  let adserverTargeting = deepAccess(moduleConfig, 'params.adserverTargeting', true);
 
   // If present, trim the bundle URL
   if (typeof bundleUrl === 'string') {
@@ -36,7 +35,7 @@ export const extractConfig = (moduleConfig, reqBidsConfigObj) => {
     throw new Error(LOG_PREFIX + ' Invalid URL format for bundleUrl in moduleConfig');
   }
 
-  return {bundleUrl, propagateTargeting};
+  return {bundleUrl, adserverTargeting};
 }
 
 /**
@@ -47,25 +46,14 @@ export const extractConfig = (moduleConfig, reqBidsConfigObj) => {
 export const mergeOptableData = async (optableBundle, reqBidsConfigObj) => {
   logWarn('Optable: ', optableBundle);
 
-  // Call Optable DCN for targeting data
-  const targetingData = await optableBundle.instance.targeting();
-
-  logWarn('Data from targeting(): ', targetingData);
-  const optableData = optableBundle.SDK.PrebidORTB2(targetingData);
-  logWarn('PrebidORTB2(targeting()): ', optableData);
+  // Call Optable DCN for targeting data and return the ORTB2 object
+  const userData = await optableBundle.instance.prebidORTB2();
+  logWarn('User ortb2 data from prebidORTB2(): ', userData);
   mergeDeep(
     reqBidsConfigObj.ortb2Fragments.global,
-    optableData,
+    userData,
   );
   logWarn('Prebid\'s global ORTB2 object after merge: ', reqBidsConfigObj.ortb2Fragments.global);
-
-  // TODO: ask why `prebidORTB2` is not accessible
-  // const userData = await optableBundle.prebidORTB2();
-  // logWarn('User ortb2 data from targeting(): ', userData);
-  // mergeDeep(
-  //   reqBidsConfigObj.ortb2Fragments.global,
-  //   userData,
-  // );
 };
 
 /**
@@ -76,10 +64,9 @@ export const mergeOptableData = async (optableBundle, reqBidsConfigObj) => {
  */
 export const getBidRequestData = (reqBidsConfigObj, callback, moduleConfig, userConsent) => {
   try {
-    // Get configuration parameters
-    const {bundleUrl, propagateTargeting} = extractConfig(moduleConfig, reqBidsConfigObj);
+    // Extract the bundle URL from the module configuration
+    const {bundleUrl} = parseConfig(moduleConfig);
     logMessage('Optable JS bundle URL ', bundleUrl);
-    logMessage('Propagate targeting: ', propagateTargeting);
     logWarn('User consent: ', userConsent);
 
     if (bundleUrl) {
@@ -110,10 +97,6 @@ export const getBidRequestData = (reqBidsConfigObj, callback, moduleConfig, user
         mergeOptableData(window.optable, reqBidsConfigObj).then(callback);
       });
     }
-
-    if (propagateTargeting) {
-      // Propagate targeting data to GAM
-    }
   } catch (error) {
     // If an error occurs, log it and call the callback
     // to continue with the auction
@@ -122,9 +105,39 @@ export const getBidRequestData = (reqBidsConfigObj, callback, moduleConfig, user
   }
 }
 
-export const getTargetingData = (adUnits, config, userConsent) => {
-  logMessage('getTargetingData called with adUnits: ', adUnits);
-  return {};
+export const getTargetingData = (adUnits, moduleConfig, userConsent, auction) => {
+  logMessage('`getTargetingData` called with adUnits: ', adUnits);
+  logMessage('config: ', moduleConfig);
+  logMessage('userConsent: ', userConsent);
+  logMessage('auction: ', auction);
+
+  // Extract `adserverTargeting` from the module configuration
+  const {adserverTargeting} = parseConfig(moduleConfig);
+  logMessage('Ad Server targeting: ', adserverTargeting);
+
+  if (!adserverTargeting) {
+    logWarn('Ad server targeting is disabled');
+    return {};
+  }
+
+  const optableTargetingData = window?.optable?.instance?.targetingKeyValuesFromCache() || {};
+  const targetingData = {};
+
+  if (!optableTargetingData.optable) {
+    logWarn('No Optable targeting data found');
+    return targetingData;
+  }
+
+  adUnits.forEach(adUnit => {
+    targetingData[adUnit] = targetingData[adUnit] || {};
+    targetingData[adUnit] = {
+      ...targetingData[adUnit],
+      ...optableTargetingData,
+    };
+  });
+
+  logMessage('Optable targeting data: ', targetingData);
+  return targetingData;
 };
 
 /**
