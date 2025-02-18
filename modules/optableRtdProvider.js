@@ -44,7 +44,8 @@ export const parseConfig = (moduleConfig) => {
   return {bundleUrl, adserverTargeting, handleRtd};
 }
 
-export const defaultHandleRtd = async (optableBundle, reqBidsConfigObj, userConsent, mergeFn, optableLog) => {
+export const defaultHandleRtd = async (reqBidsConfigObj, userConsent, mergeFn, optableLog) => {
+  const optableBundle = /** @type {Object} */ (window.optable);
   // Call Optable DCN for targeting data and return the ORTB2 object
   const targetingData = await optableBundle.instance.targeting();
   logMessage('Original targeting data from targeting(): ', JSON.parse(JSON.stringify(targetingData)));
@@ -145,7 +146,7 @@ export const getTargetingData = (adUnits, moduleConfig, userConsent, auction) =>
   const optableTargetingData = window?.optable?.instance?.targetingKeyValuesFromCache() || {};
 
   // If no Optable targeting data is found, return an empty object
-  if (!optableTargetingData.optable) {
+  if (!Object.keys(optableTargetingData).length) {
     logWarn('No Optable targeting data found');
     return targetingData;
   }
