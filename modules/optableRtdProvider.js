@@ -44,11 +44,11 @@ export const parseConfig = (moduleConfig) => {
   return {bundleUrl, adserverTargeting, handleRtd};
 }
 
-export const defaultHandleRtd = async (reqBidsConfigObj, userConsent, mergeFn, optableLog) => {
+export const defaultHandleRtd = async (reqBidsConfigObj, mergeFn) => {
   const optableBundle = /** @type {Object} */ (window.optable);
   // Call Optable DCN for targeting data and return the ORTB2 object
   const targetingData = await optableBundle.instance.targeting();
-  logMessage('Original targeting data from targeting(): ', JSON.parse(JSON.stringify(targetingData)));
+  logMessage('Original targeting data from targeting(): ', targetingData);
 
   if (!targetingData || !targetingData.ortb2) {
     logWarn('No targeting data found');

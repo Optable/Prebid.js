@@ -132,29 +132,23 @@
                             params: {
                                 // bundleUrl: "https://prebidtest.solutions.cdn.optable.co/public-assets/prebidtest-sdk.js?hello=world",
                                 // adserverTargeting: false,
-                                // handleRtd: async (optableBundle, reqBidsConfigObj, userConsent, mergeFn, optableLog) => {
+                                // handleRtd: async (reqBidsConfigObj, mergeFn) => {
+                                //     const optableBundle = /** @type {Object} */ (window.optable);
                                 //     console.warn('Entering custom RTD handler');
-                                //     console.warn('optableBundle', optableBundle);
                                 //     console.warn('reqBidsConfigObj', reqBidsConfigObj);
-                                //     console.warn('userConsent', userConsent);
                                 //     console.warn('mergeFn', mergeFn);
-                                //     console.warn('optableLog', optableLog);
-                                //     const { logWarn } = optableLog;
                                 //
                                 //     // Call Optable DCN for targeting data and return the ORTB2 object
                                 //     const targetingData = await optableBundle.instance.targeting();
-                                //     logWarn('Original targeting data from targeting(): ', JSON.parse(JSON.stringify(targetingData)));
                                 //
                                 //     if (!targetingData || !targetingData.ortb2) {
-                                //     logWarn('No targeting data found');
-                                //     return;
+                                //         return;
                                 //     }
                                 //
                                 //     mergeFn(
-                                //     reqBidsConfigObj.ortb2Fragments.global,
-                                //     targetingData.ortb2,
+                                //         reqBidsConfigObj.ortb2Fragments.global,
+                                //         targetingData.ortb2,
                                 //     );
-                                //     logWarn('Prebid\'s global ORTB2 object after merge: ', reqBidsConfigObj.ortb2Fragments.global);
                                 // }
                             }
                         }
