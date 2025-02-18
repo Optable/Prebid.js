@@ -71,11 +71,11 @@ export const defaultHandleRtd = async (reqBidsConfigObj, mergeFn) => {
  * @param {Function} mergeFn Function to merge data
  * @param {Object} optableLog Set of logging functions
  */
-export const mergeOptableData = async (optableBundle, handleRtdFn, reqBidsConfigObj, userConsent, mergeFn, optableLog) => {
+export const mergeOptableData = async (handleRtdFn, reqBidsConfigObj, mergeFn) => {
   if (handleRtdFn.constructor.name === 'AsyncFunction') {
-    await handleRtdFn(optableBundle, reqBidsConfigObj, userConsent, mergeFn, optableLog);
+    await handleRtdFn(reqBidsConfigObj, mergeFn);
   } else {
-    handleRtdFn(optableBundle, reqBidsConfigObj, userConsent, mergeFn, optableLog);
+    handleRtdFn(reqBidsConfigObj, mergeFn);
   }
 };
 
@@ -100,9 +100,8 @@ export const getBidRequestData = (reqBidsConfigObj, callback, moduleConfig, user
 
       // Load Optable JS bundle and merge the data
       loadExternalScript(bundleUrl, MODULE_TYPE_RTD, MODULE_NAME, () => {
-        const optable = /** @type {Object} */ (window.optable);
         logMessage('Successfully loaded Optable JS bundle');
-        mergeOptableData(optable, handleRtdFn, reqBidsConfigObj, userConsent, mergeDeep, optableLog).then(callback);
+        mergeOptableData(handleRtdFn, reqBidsConfigObj, mergeDeep).then(callback);
       }, document);
     } else {
       // At this point, we assume that the Optable JS bundle is already
@@ -112,9 +111,8 @@ export const getBidRequestData = (reqBidsConfigObj, callback, moduleConfig, user
         'Assuming Optable JS bundle is already present on the page');
       window.optable = window.optable || { cmd: [] };
       window.optable.cmd.push(() => {
-        const optable = /** @type {Object} */ (window.optable);
         logMessage('Optable JS bundle found on the page');
-        mergeOptableData(optable, handleRtdFn, reqBidsConfigObj, userConsent, mergeDeep, optableLog).then(callback);
+        mergeOptableData(handleRtdFn, reqBidsConfigObj, mergeDeep).then(callback);
       });
     }
   } catch (error) {
