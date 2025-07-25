@@ -97,6 +97,11 @@
                         params: {
                             placementId: 13232392,
                         }
+                    }, {
+                        bidder: 'sharethrough',
+                        params: {
+                             pkey: 'LuB3vxGGFrBZJa6tifXW4xgK',
+                        }
                     }]
                 },
                 {
@@ -145,25 +150,27 @@
                             params: {
                                 // bundleUrl: "https://prebidtest.solutions.cdn.optable.co/public-assets/prebidtest-sdk.js?hello=world",
                                 // adserverTargeting: false,
-                                // handleRtd: async (reqBidsConfigObj, optableExtraData, mergeFn) => {
-                                //     const optableBundle = /** @type {Object} */ (window.optable);
-                                //     console.warn('Entering custom RTD handler');
-                                //     console.warn('reqBidsConfigObj', reqBidsConfigObj);
-                                //     console.warn('optableExtraData', optableExtraData);
-                                //     console.warn('mergeFn', mergeFn);
-                                //
-                                //     // Call Optable DCN for targeting data and return the ORTB2 object
-                                //     const targetingData = await optableBundle.instance.targeting();
-                                //
-                                //     if (!targetingData || !targetingData.ortb2) {
-                                //         return;
-                                //     }
-                                //
-                                //     mergeFn(
-                                //         reqBidsConfigObj.ortb2Fragments.global,
-                                //         targetingData.ortb2,
-                                //     );
-                                // }
+                                handleRtd: async (reqBidsConfigObj, optableExtraData, mergeFn) => {
+                                    const optableBundle = /** @type {Object} */ (window.optable.prebidtest);
+                                    console.warn('Entering custom RTD handler');
+                                    console.warn('reqBidsConfigObj', reqBidsConfigObj);
+                                    console.warn('optableExtraData', optableExtraData);
+                                    console.warn('mergeFn', mergeFn);
+                                
+                                    // Call Optable DCN for targeting data and return the ORTB2 object
+                                    const targetingData = await optableBundle.targetingFromCache();
+                                    
+                                    console.warn('targetingData', targetingData);
+
+                                    if (!targetingData || !targetingData.ortb2) {
+                                        return;
+                                    }
+                                    
+                                    mergeFn(
+                                        reqBidsConfigObj.ortb2Fragments.global,
+                                        targetingData.ortb2,
+                                    );
+                                }
                             }
                         }
                     ]
