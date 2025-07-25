@@ -7,6 +7,7 @@
     <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
     <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
     <script async src="../../build/dev/prebid.js"></script>
+    <script async src="./analytics-tracker.js"></script>
     <meta charset="UTF-8">
     <style>
         body {
@@ -59,6 +60,12 @@
     <script>
         var PREBID_TIMEOUT = 3000;
         var FAILSAFE_TIMEOUT = 5000;
+        
+        // Analytics configuration - switch between adapter and external script
+        var ANALYTICS_CONFIG = {
+            useAdapter: false, // Set to true to use generic analytics adapter, false for external script
+            endpoint: 'http://localhost:3030/analytics'
+        };
 
         var googletag = googletag || {};
         googletag.cmd = googletag.cmd || [];
@@ -83,7 +90,69 @@
             pbjs.initAdserverSet = true;
         }
 
+        // Initialize analytics tracking based on configuration
+        function initAnalytics() {
+            if (ANALYTICS_CONFIG.useAdapter) {
+                // Use the generic analytics adapter
+                pbjs.que.push(function () {
+                    // Wait for filterData to be available from external script
+                    function enableAnalytics() {
+                        if (typeof window.filterData === 'undefined') {
+                            setTimeout(enableAnalytics, 50);
+                            return;
+                        }
+                        
+                        // Enable generic analytics adapter
+                        pbjs.enableAnalytics({
+                            provider: 'generic',
+                            options: {
+                                url: ANALYTICS_CONFIG.endpoint,
+                                batchSize: 1, // Send events immediately
+                                events: {
+                                    auctionInit: function(args) {
+                                        return {
+                                            eventType: 'auctionInit',
+                                            timestamp: new Date().toISOString(),
+                                            data: window.filterData(args)
+                                        };
+                                    },
+                                    bidRequested: function(args) {
+                                        return {
+                                            eventType: 'bidRequested',
+                                            timestamp: new Date().toISOString(),
+                                            data: window.filterData(args)
+                                        };
+                                    },
+                                    bidResponse: function(args) {
+                                        return {
+                                            eventType: 'bidResponse',
+                                            timestamp: new Date().toISOString(),
+                                            data: window.filterData(args)
+                                        };
+                                    },
+                                    bidWon: function(args) {
+                                        return {
+                                            eventType: 'bidWon',
+                                            timestamp: new Date().toISOString(),
+                                            data: window.filterData(args)
+                                        };
+                                    }
+                                }
+                            }
+                        });
+                    }
+                    
+                    enableAnalytics();
+                });
+            }
+            // External script event listeners are registered automatically when useAdapter is false
+        }
+
+        // Initialize analytics
+        initAnalytics();
+
         pbjs.que.push(function () {
+
             var adUnits = [
                 {
                     code: '/22081946781/web-sdk-demo-gam360/header-ad',
@@ -95,7 +164,25 @@
                     bids: [{
                         bidder: 'appnexus',
                         params: {
-                            placementId: 13232392,
+                            placementId: 18349132,
+                            publisherId: 1078346
+                        }
+                    }, {
+                        bidder: 'rubicon',
+                        params: {
+                            accountId: 13226,
+                            siteId: 307728,
+                            zoneId: 1553136
+                        }
+                    }, {
+                        bidder: 'triplelift',
+                        params: {
+                            inventoryCode: 'fnc_desk_hp_lb1'
+                        }
+                    }, {
+                        bidder: 'sharethrough',
+                        params: {
+                             pkey: 'LuB3vxGGFrBZJa6tifXW4xgK',
                         }
                     }]
                 },
@@ -109,7 +196,20 @@
                     bids: [{
                         bidder: 'appnexus',
                         params: {
-                            placementId: 13232392,
+                            placementId: 18349136,
+                            publisherId: 1078346
+                        }
+                    }, {
+                        bidder: 'rubicon',
+                        params: {
+                            accountId: 13226,
+                            siteId: 307728,
+                            zoneId: 1553140
+                        }
+                    }, {
+                        bidder: 'triplelift',
+                        params: {
+                            inventoryCode: 'fnc_desk_hp_mr1'
                         }
                     }]
                 },
@@ -123,7 +223,20 @@
                     bids: [{
                         bidder: 'appnexus',
                         params: {
-                            placementId: 13232392,
+                            placementId: 18349133,
+                            publisherId: 1078346
+                        }
+                    }, {
+                        bidder: 'rubicon',
+                        params: {
+                            accountId: 13226,
+                            siteId: 307728,
+                            zoneId: 1553138
+                        }
+                    }, {
+                        bidder: 'triplelift',
+                        params: {
+                            inventoryCode: 'fnc_desk_hp_lb2'
                         }
                     }]
                 },
@@ -143,36 +256,54 @@
                             name: 'optable',
                             waitForIt: true,
                             params: {
-                                // bundleUrl: "https://prebidtest.solutions.cdn.optable.co/public-assets/prebidtest-sdk.js?hello=world",
+                                bundleUrl: "https://prebidtest.solutions.cdn.optable.co/public-assets/prebidtest-sdk.js",
                                 // adserverTargeting: false,
-                                // handleRtd: async (reqBidsConfigObj, optableExtraData, mergeFn) => {
-                                //     const optableBundle = /** @type {Object} */ (window.optable);
-                                //     console.warn('Entering custom RTD handler');
-                                //     console.warn('reqBidsConfigObj', reqBidsConfigObj);
-                                //     console.warn('optableExtraData', optableExtraData);
-                                //     console.warn('mergeFn', mergeFn);
-                                //
-                                //     // Call Optable DCN for targeting data and return the ORTB2 object
-                                //     const targetingData = await optableBundle.instance.targeting();
-                                //
-                                //     if (!targetingData || !targetingData.ortb2) {
-                                //         return;
-                                //     }
-                                //
-                                //     mergeFn(
-                                //         reqBidsConfigObj.ortb2Fragments.global,
-                                //         targetingData.ortb2,
-                                //     );
-                                // }
+                                handleRtd: async (reqBidsConfigObj, optableExtraData, mergeFn) => {
+                                    const optableBundle = /** @type {Object} */ (window.optable.prebidtest);
+                                    console.warn('Entering custom RTD handler');
+                                    console.warn('reqBidsConfigObj', reqBidsConfigObj);
+                                    console.warn('optableExtraData', optableExtraData);
+                                    console.warn('mergeFn', mergeFn);
+                                
+                                    // Call Optable DCN for targeting data and return the ORTB2 object
+                                    const targetingData = await optableBundle.targetingFromCache();
+                                    
+                                    console.warn('targetingData', targetingData);
+
+                                    if (!targetingData || !targetingData.ortb2) {
+                                        return;
+                                    }
+
+                                    mergeFn(
+                                        reqBidsConfigObj.ortb2Fragments.global,
+                                        targetingData.ortb2,
+                                    );
+                                }
                             }
                         }
                     ]
                 },
             });
+            pbjs.mergeConfig({
+                ortb2: {
+                    user: {
+                        ext: {
+                            eids: [{
+                                id: "test.com",
+                                uids: ["1","2","3"]
+                            }]
+                        }
+                    }
+                }
+            });
 
             pbjs.addAdUnits(adUnits);
+            pbjs.onEvent('auctionInit', function(data) {
+                console.log("auctionInit ortb2.user:", JSON.stringify(data, null, 2));
+            });
 
             pbjs.onEvent('bidRequested', function (data) {
+                console.log('bidRequested event fired:', data);
                 try {
                     window.optable.cmd.push(() => {
                         document.getElementById('enriched-optable').style.display = 'block';
@@ -181,6 +312,24 @@
                 } catch (e) {
                     console.error('Exception while trying to display enriched data', e);
                 }
+            });
+
+            pbjs.onEvent('bidResponse', function (bid) {
+                console.log('bidResponse event fired:', bid);
+                console.log('Bid CPM:', bid.cpm);
+                console.log('Bid Size:', bid.size);
+                console.log('Bid Ad ID:', bid.adId);
+                console.log('Bid Bidder:', bid.bidder);
+                console.log('Bid Ad Unit Code:', bid.adUnitCode);
+            });
+
+            pbjs.onEvent('bidWon', function (bid) {
+                console.log('bidWon event fired:', bid);
+                console.log('Winning Bid CPM:', bid.cpm);
+                console.log('Winning Bid Ad ID:', bid.adId);
+                console.log('Winning Bid Bidder:', bid.bidder);
+                console.log('Winning Bid Ad Unit Code:', bid.adUnitCode);
+                console.log('Winning Bid Status:', bid.status);
             });
 
             pbjs.requestBids({
