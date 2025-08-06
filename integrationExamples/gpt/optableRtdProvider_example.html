@@ -7,7 +7,7 @@
     <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
     <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
     <script async src="../../build/dev/prebid.js"></script>
-    <script async src="./analytics-tracker.js"></script>
+    <!-- Analytics script will be loaded dynamically with configurable delay -->
     <meta charset="UTF-8">
     <style>
         body {
@@ -64,7 +64,8 @@
         // Analytics configuration - switch between adapter and external script
         var ANALYTICS_CONFIG = {
             useAdapter: false, // Set to true to use generic analytics adapter, false for external script
-            endpoint: 'http://localhost:3030/analytics'
+            endpoint: 'http://localhost:3030/analytics',
+            scriptLoadDelay: 2000 // Delay in milliseconds before loading analytics script (0 = immediate)
         };
 
         var googletag = googletag || {};
@@ -90,70 +91,221 @@
             pbjs.initAdserverSet = true;
         }
 
+        // Function to dynamically load analytics script with delay
+        function loadAnalyticsScript() {
+            return new Promise((resolve, reject) => {
+                const delay = ANALYTICS_CONFIG.scriptLoadDelay || 0;
+                
+                console.log(`Loading analytics script with ${delay}ms delay...`);
+                updateAnalyticsStatus(`Loading analytics script (${delay}ms delay)...`);
+                
+                setTimeout(() => {
+                    const script = document.createElement('script');
+                    script.src = './analytics-tracker.js';
+                    script.onload = () => {
+                        console.log('Analytics script loaded successfully');
+                        updateAnalyticsStatus('Analytics script loaded');
+                        resolve();
+                    };
+                    script.onerror = (error) => {
+                        console.error('Failed to load analytics script:', error);
+                        updateAnalyticsStatus('Analytics script failed to load');
+                        reject(error);
+                    };
+                    document.head.appendChild(script);
+                }, delay);
+            });
+        }
+
+        // Function to update analytics status
+        function updateAnalyticsStatus(message) {
+            const statusElement = document.getElementById('analytics-status');
+            if (statusElement) {
+                statusElement.textContent = message;
+            }
+        }
+
+        // Function to update analytics configuration display
+        function updateAnalyticsConfigDisplay() {
+            const modeElement = document.getElementById('analytics-mode');
+            const delayElement = document.getElementById('analytics-delay');
+            const endpointElement = document.getElementById('analytics-endpoint');
+            
+            if (modeElement) {
+                modeElement.textContent = ANALYTICS_CONFIG.useAdapter ? 'Generic Adapter' : 'External Script';
+            }
+            if (delayElement) {
+                delayElement.textContent = `${ANALYTICS_CONFIG.scriptLoadDelay || 0}ms`;
+            }
+            if (endpointElement) {
+                endpointElement.textContent = ANALYTICS_CONFIG.endpoint;
+            }
+        }
+
         // Initialize analytics tracking based on configuration
         function initAnalytics() {
-            if (ANALYTICS_CONFIG.useAdapter) {
-                // Use the generic analytics adapter
-                pbjs.que.push(function () {
-                    // Wait for filterData to be available from external script
-                    function enableAnalytics() {
-                        if (typeof window.filterData === 'undefined') {
-                            setTimeout(enableAnalytics, 50);
-                            return;
-                        }
-                        
-                        // Enable generic analytics adapter
-                        pbjs.enableAnalytics({
-                            provider: 'generic',
-                            options: {
-                                url: ANALYTICS_CONFIG.endpoint,
-                                batchSize: 1, // Send events immediately
-                                events: {
-                                    auctionInit: function(args) {
-                                        return {
-                                            eventType: 'auctionInit',
-                                            timestamp: new Date().toISOString(),
-                                            data: window.filterData(args)
-                                        };
-                                    },
-                                    bidRequested: function(args) {
-                                        return {
-                                            eventType: 'bidRequested',
-                                            timestamp: new Date().toISOString(),
-                                            data: window.filterData(args)
-                                        };
-                                    },
-                                    bidResponse: function(args) {
-                                        return {
-                                            eventType: 'bidResponse',
-                                            timestamp: new Date().toISOString(),
-                                            data: window.filterData(args)
-                                        };
-                                    },
-                                    bidWon: function(args) {
-                                        return {
-                                            eventType: 'bidWon',
-                                            timestamp: new Date().toISOString(),
-                                            data: window.filterData(args)
-                                        };
+            // Load the analytics script first with configurable delay
+            loadAnalyticsScript().then(() => {
+                if (ANALYTICS_CONFIG.useAdapter) {
+                    // Use the generic analytics adapter
+                    pbjs.que.push(function () {
+                        // Wait for filterData to be available from external script
+                        function enableAnalytics() {
+                            if (typeof window.filterData === 'undefined') {
+                                setTimeout(enableAnalytics, 50);
+                                return;
+                            }
+                            
+                            updateAnalyticsStatus('Generic analytics adapter enabled');
+                            
+                            // Enable generic analytics adapter
+                            pbjs.enableAnalytics({
+                                provider: 'generic',
+                                options: {
+                                    url: ANALYTICS_CONFIG.endpoint,
+                                    batchSize: 1, // Send events immediately
+                                    events: {
+                                        auctionInit: function(args) {
+                                            return {
+                                                eventType: 'auctionInit',
+                                                timestamp: new Date().toISOString(),
+                                                data: window.filterData(args)
+                                            };
+                                        },
+                                        bidRequested: function(args) {
+                                            return {
+                                                eventType: 'bidRequested',
+                                                timestamp: new Date().toISOString(),
+                                                data: window.filterData(args)
+                                            };
+                                        },
+                                        bidResponse: function(args) {
+                                            return {
+                                                eventType: 'bidResponse',
+                                                timestamp: new Date().toISOString(),
+                                                data: window.filterData(args)
+                                            };
+                                        },
+                                        bidWon: function(args) {
+                                            return {
+                                                eventType: 'bidWon',
+                                                timestamp: new Date().toISOString(),
+                                                data: window.filterData(args)
+                                            };
+                                        }
                                     }
                                 }
-                            }
-                        });
-                    }
-                    
-                    enableAnalytics();
-                });
-            }
-            // External script event listeners are registered automatically when useAdapter is false
+                            });
+                        }
+                        
+                        enableAnalytics();
+                    });
+                } else {
+                    updateAnalyticsStatus('External analytics tracker active');
+                }
+                // External script event listeners are registered automatically when useAdapter is false
+            }).catch((error) => {
+                console.error('Analytics initialization failed:', error);
+                updateAnalyticsStatus('Analytics initialization failed');
+            });
         }
 
         // Initialize analytics
+        updateAnalyticsConfigDisplay();
         initAnalytics();
+
+        // Auto-refresh configuration
+        var AUTO_REFRESH_ENABLED = true;
+        var AUTO_REFRESH_INTERVAL = 10000; // 10 seconds
+        var refreshTimer;
+        var refreshCount = 0;
+        var adUnits; // Declare adUnits in global scope
+
+        // Function to update status display
+        function updateStatus(message) {
+            const statusElement = document.getElementById('refresh-status');
+            if (statusElement) {
+                statusElement.textContent = `Status: ${message}`;
+            }
+        }
+
+        // Function to refresh ad units
+        function refreshAds() {
+            if (!adUnits || !Array.isArray(adUnits) || adUnits.length === 0) {
+                console.warn('adUnits not available for refresh');
+                updateStatus('Error: adUnits not available');
+                return;
+            }
+
+            refreshCount++;
+            const timestamp = new Date().toLocaleTimeString();
+            console.log(`Auto-refresh #${refreshCount} at ${timestamp}`);
+            updateStatus(`Refreshing... (#${refreshCount})`);
+            
+            try {
+                pbjs.que.push(function() {
+                    try {
+                        pbjs.requestBids({
+                            timeout: PREBID_TIMEOUT,
+                            adUnitCodes: adUnits.map(unit => unit.code),
+                            bidsBackHandler: function(bidResponses) {
+                                try {
+                                    pbjs.setTargetingForGPTAsync();
+                                    googletag.pubads().refresh();
+                                    updateStatus(`Last refresh: ${timestamp} (#${refreshCount})`);
+                                } catch (error) {
+                                    console.warn('Error during bid response handling:', error);
+                                    updateStatus(`Refresh error: ${timestamp}`);
+                                }
+                            }
+                        });
+                    } catch (error) {
+                        console.warn('Error during requestBids:', error);
+                        updateStatus(`Refresh error: ${timestamp}`);
+                    }
+                });
+            } catch (error) {
+                console.warn('Error queuing refresh request:', error);
+                updateStatus(`Queue error: ${timestamp}`);
+            }
+        }
+
+        // Function to start auto-refresh
+        function startAutoRefresh() {
+            if (AUTO_REFRESH_ENABLED && !refreshTimer) {
+                refreshTimer = setInterval(refreshAds, AUTO_REFRESH_INTERVAL);
+                console.log(`Auto-refresh started - will refresh every ${AUTO_REFRESH_INTERVAL/1000} seconds`);
+                updateStatus(`Auto-refresh active (${AUTO_REFRESH_INTERVAL/1000}s interval)`);
+            }
+        }
+
+        // Function to stop auto-refresh
+        function stopAutoRefresh() {
+            if (refreshTimer) {
+                clearInterval(refreshTimer);
+                refreshTimer = null;
+                console.log('Auto-refresh stopped');
+                updateStatus('Auto-refresh stopped');
+            }
+        }
+
+        // Function to change analytics delay for testing
+        function setAnalyticsDelay(delayMs) {
+            ANALYTICS_CONFIG.scriptLoadDelay = delayMs;
+            updateAnalyticsConfigDisplay();
+            console.log(`Analytics delay set to ${delayMs}ms`);
+        }
+
+        // Expose control functions globally for debugging
+        window.startAutoRefresh = startAutoRefresh;
+        window.stopAutoRefresh = stopAutoRefresh;
+        window.refreshAds = refreshAds;
+        window.setAnalyticsDelay = setAnalyticsDelay;
+        window.updateAnalyticsConfigDisplay = updateAnalyticsConfigDisplay;
 
         pbjs.que.push(function () {
 
-            var adUnits = [
+            adUnits = [ // Remove var to use the global variable
                 {
                     code: '/22081946781/web-sdk-demo-gam360/header-ad',
                     mediaTypes: {
@@ -336,6 +488,8 @@
                 timeout: PREBID_TIMEOUT,
                 bidsBackHandler: function (bidResponses) {
                     initAdserver();
+                    // Start auto-refresh after initial load
+                    setTimeout(startAutoRefresh, 2000); // Wait 2 seconds after initial load
                 }
             });
         });
@@ -386,6 +540,30 @@
         </div>
         <div class="row">
             <h1>Optable RTD module example</h1>
+        </div>
+        
+        <div class="row" style="margin-bottom: 20px;">
+            <div style="background-color: #f8f8f8; padding: 15px; border-radius: 5px;">
+                <strong>Auto-refresh Controls:</strong>
+                <button onclick="startAutoRefresh()" style="margin-left: 10px; padding: 5px 10px;">Start Auto-refresh</button>
+                <button onclick="stopAutoRefresh()" style="margin-left: 5px; padding: 5px 10px;">Stop Auto-refresh</button>
+                <button onclick="refreshAds()" style="margin-left: 5px; padding: 5px 10px;">Manual Refresh</button>
+                <span id="refresh-status" style="margin-left: 15px; font-weight: normal;">Status: Ready</span>
+            </div>
+        </div>
+        
+        <div class="row" style="margin-bottom: 20px;">
+            <div style="background-color: #e8f4f8; padding: 15px; border-radius: 5px;">
+                <strong>Analytics Status:</strong>
+                <span id="analytics-status" style="margin-left: 15px; font-weight: normal;">Initializing...</span>
+                <br><br>
+                <strong>Configuration:</strong>
+                <span style="margin-left: 15px; font-weight: normal;">
+                    Mode: <code id="analytics-mode">External Script</code> | 
+                    Delay: <code id="analytics-delay">2000ms</code> | 
+                    Endpoint: <code id="analytics-endpoint">http://localhost:3030/analytics</code>
+                </span>
+            </div>
         </div>
 
         <h3>web-sdk-demo-gam360/header-ad</h3>
