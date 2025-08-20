@@ -1,0 +1,5141 @@
+{
+    "serverTimestamp": "2025-08-20T14:25:21.210Z",
+    "clientIP": "::1",
+    "eventType": "auctionInit",
+    "timestamp": "2025-08-20T14:25:21.166Z",
+    "data":
+    {
+        "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+        "timestamp": 1755699921000,
+        "auctionStatus": "inProgress",
+        "adUnits":
+        [
+            {
+                "code": "/22081946781/web-sdk-demo-gam360/header-ad",
+                "mediaTypes":
+                {
+                    "banner":
+                    {
+                        "sizes":
+                        [
+                            [
+                                728,
+                                90
+                            ]
+                        ]
+                    }
+                },
+                "bids":
+                [
+                    {
+                        "bidder": "appnexus",
+                        "params":
+                        {
+                            "placementId": 18349132,
+                            "publisherId": 1078346
+                        }
+                    },
+                    {
+                        "bidder": "rubicon",
+                        "params":
+                        {
+                            "accountId": 13226,
+                            "siteId": 307728,
+                            "zoneId": 1553136
+                        }
+                    },
+                    {
+                        "bidder": "triplelift",
+                        "params":
+                        {
+                            "inventoryCode": "fnc_desk_hp_lb1"
+                        }
+                    },
+                    {
+                        "bidder": "sharethrough",
+                        "params":
+                        {
+                            "pkey": "LuB3vxGGFrBZJa6tifXW4xgK"
+                        }
+                    }
+                ],
+                "sizes":
+                [
+                    [
+                        728,
+                        90
+                    ]
+                ],
+                "adUnitId": "42701cf5-c864-4988-b1d9-f19421cb91bc",
+                "transactionId": "825ce508-9e54-4de6-ae37-d219a68d9e96",
+                "ortb2Imp":
+                {
+                    "ext":
+                    {
+                        "tid": "825ce508-9e54-4de6-ae37-d219a68d9e96"
+                    }
+                }
+            },
+            {
+                "code": "/22081946781/web-sdk-demo-gam360/box-ad",
+                "mediaTypes":
+                {
+                    "banner":
+                    {
+                        "sizes":
+                        [
+                            [
+                                250,
+                                250
+                            ],
+                            [
+                                300,
+                                250
+                            ],
+                            [
+                                200,
+                                200
+                            ]
+                        ]
+                    }
+                },
+                "bids":
+                [
+                    {
+                        "bidder": "appnexus",
+                        "params":
+                        {
+                            "placementId": 18349136,
+                            "publisherId": 1078346
+                        }
+                    },
+                    {
+                        "bidder": "rubicon",
+                        "params":
+                        {
+                            "accountId": 13226,
+                            "siteId": 307728,
+                            "zoneId": 1553140
+                        }
+                    },
+                    {
+                        "bidder": "triplelift",
+                        "params":
+                        {
+                            "inventoryCode": "fnc_desk_hp_mr1"
+                        }
+                    }
+                ],
+                "sizes":
+                [
+                    [
+                        250,
+                        250
+                    ],
+                    [
+                        300,
+                        250
+                    ],
+                    [
+                        200,
+                        200
+                    ]
+                ],
+                "adUnitId": "c5103bf6-2024-4453-8171-c91021fca868",
+                "transactionId": "1035df2c-ef47-4638-acdd-b5c65268580f",
+                "ortb2Imp":
+                {
+                    "ext":
+                    {
+                        "tid": "1035df2c-ef47-4638-acdd-b5c65268580f"
+                    }
+                }
+            },
+            {
+                "code": "/22081946781/web-sdk-demo-gam360/footer-ad",
+                "mediaTypes":
+                {
+                    "banner":
+                    {
+                        "sizes":
+                        [
+                            [
+                                728,
+                                90
+                            ]
+                        ]
+                    }
+                },
+                "bids":
+                [
+                    {
+                        "bidder": "appnexus",
+                        "params":
+                        {
+                            "placementId": 18349133,
+                            "publisherId": 1078346
+                        }
+                    },
+                    {
+                        "bidder": "rubicon",
+                        "params":
+                        {
+                            "accountId": 13226,
+                            "siteId": 307728,
+                            "zoneId": 1553138
+                        }
+                    },
+                    {
+                        "bidder": "triplelift",
+                        "params":
+                        {
+                            "inventoryCode": "fnc_desk_hp_lb2"
+                        }
+                    }
+                ],
+                "sizes":
+                [
+                    [
+                        728,
+                        90
+                    ]
+                ],
+                "adUnitId": "6e841d2c-0288-4518-9808-f702514641d6",
+                "transactionId": "9e2effd4-79ee-496a-95cf-158ba19a22a2",
+                "ortb2Imp":
+                {
+                    "ext":
+                    {
+                        "tid": "9e2effd4-79ee-496a-95cf-158ba19a22a2"
+                    }
+                }
+            }
+        ],
+        "adUnitCodes":
+        [
+            "/22081946781/web-sdk-demo-gam360/header-ad",
+            "/22081946781/web-sdk-demo-gam360/box-ad",
+            "/22081946781/web-sdk-demo-gam360/footer-ad"
+        ],
+        "bidderRequests":
+        [
+            {
+                "bidderCode": "rubicon",
+                "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+                "bidderRequestId": "1017e50b317b606958",
+                "bids":
+                [
+                    {
+                        "bidder": "rubicon",
+                        "params":
+                        {
+                            "accountId": 13226,
+                            "siteId": 307728,
+                            "zoneId": 1553136
+                        },
+                        "ortb2Imp":
+                        {
+                            "ext":
+                            {}
+                        },
+                        "mediaTypes":
+                        {
+                            "banner":
+                            {
+                                "sizes":
+                                [
+                                    [
+                                        728,
+                                        90
+                                    ]
+                                ]
+                            }
+                        },
+                        "adUnitCode": "/22081946781/web-sdk-demo-gam360/header-ad",
+                        "transactionId": "825ce508-9e54-4de6-ae37-d219a68d9e96",
+                        "adUnitId": "42701cf5-c864-4988-b1d9-f19421cb91bc",
+                        "sizes":
+                        [
+                            [
+                                728,
+                                90
+                            ]
+                        ],
+                        "bidId": "101817ce855141f29",
+                        "bidderRequestId": "1017e50b317b606958",
+                        "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+                        "src": "client",
+                        "metrics":
+                        {},
+                        "auctionsCount": 64,
+                        "bidRequestsCount": 64,
+                        "bidderRequestsCount": 64,
+                        "bidderWinsCount": 0,
+                        "deferBilling": false,
+                        "ortb2":
+                        {
+                            "source":
+                            {},
+                            "user":
+                            {
+                                "ext":
+                                {
+                                    "eids":
+                                    [
+                                        {
+                                            "id": "test.com",
+                                            "uids":
+                                            []
+                                        }
+                                    ]
+                                },
+                                "data":
+                                [
+                                    {
+                                        "id": "optable.co",
+                                        "segment":
+                                        [
+                                            {
+                                                "id": "67f6cec4"
+                                            },
+                                            {
+                                                "id": "4026f4f4"
+                                            },
+                                            {
+                                                "id": "082793f9"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "eids":
+                                [
+                                    {
+                                        "inserter": "optable.co",
+                                        "matcher": "optable.co",
+                                        "mm": 3,
+                                        "source": "optable.co",
+                                        "uids":
+                                        []
+                                    },
+                                    {
+                                        "inserter": "optable.co",
+                                        "matcher": "optable.co",
+                                        "mm": 3,
+                                        "source": "uidapi.com",
+                                        "uids":
+                                        []
+                                    },
+                                    {
+                                        "inserter": "optable.co",
+                                        "matcher": "optable.co",
+                                        "mm": 3,
+                                        "source": "criteo-hemapi.com",
+                                        "uids":
+                                        []
+                                    }
+                                ]
+                            },
+                            "site":
+                            {
+                                "domain": "localhost:9999",
+                                "publisher":
+                                {
+                                    "domain": "localhost:9999"
+                                },
+                                "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                                "ext":
+                                {
+                                    "data":
+                                    {
+                                        "documentLang": "en"
+                                    }
+                                },
+                                "content":
+                                {
+                                    "language": "en"
+                                }
+                            },
+                            "device":
+                            {
+                                "w": 1920,
+                                "h": 1080,
+                                "dnt": 0,
+                                "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+                                "language": "en",
+                                "ext":
+                                {
+                                    "vpw": 1920,
+                                    "vph": 934
+                                },
+                                "sua":
+                                {
+                                    "source": 1,
+                                    "platform":
+                                    {
+                                        "brand": "macOS"
+                                    },
+                                    "browsers":
+                                    [
+                                        {
+                                            "brand": "Not;A=Brand",
+                                            "version":
+                                            [
+                                                "99"
+                                            ]
+                                        },
+                                        {
+                                            "brand": "Google Chrome",
+                                            "version":
+                                            [
+                                                "139"
+                                            ]
+                                        },
+                                        {
+                                            "brand": "Chromium",
+                                            "version":
+                                            [
+                                                "139"
+                                            ]
+                                        }
+                                    ],
+                                    "mobile": 0
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "bidder": "rubicon",
+                        "params":
+                        {
+                            "accountId": 13226,
+                            "siteId": 307728,
+                            "zoneId": 1553140
+                        },
+                        "ortb2Imp":
+                        {
+                            "ext":
+                            {}
+                        },
+                        "mediaTypes":
+                        {
+                            "banner":
+                            {
+                                "sizes":
+                                [
+                                    [
+                                        250,
+                                        250
+                                    ],
+                                    [
+                                        300,
+                                        250
+                                    ],
+                                    [
+                                        200,
+                                        200
+                                    ]
+                                ]
+                            }
+                        },
+                        "adUnitCode": "/22081946781/web-sdk-demo-gam360/box-ad",
+                        "transactionId": "1035df2c-ef47-4638-acdd-b5c65268580f",
+                        "adUnitId": "c5103bf6-2024-4453-8171-c91021fca868",
+                        "sizes":
+                        [
+                            [
+                                250,
+                                250
+                            ],
+                            [
+                                300,
+                                250
+                            ],
+                            [
+                                200,
+                                200
+                            ]
+                        ],
+                        "bidId": "1019547a034d7f9c",
+                        "bidderRequestId": "1017e50b317b606958",
+                        "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+                        "src": "client",
+                        "metrics":
+                        {},
+                        "auctionsCount": 64,
+                        "bidRequestsCount": 64,
+                        "bidderRequestsCount": 64,
+                        "bidderWinsCount": 0,
+                        "deferBilling": false,
+                        "ortb2":
+                        {
+                            "source":
+                            {},
+                            "user":
+                            {
+                                "ext":
+                                {
+                                    "eids":
+                                    [
+                                        {
+                                            "id": "test.com",
+                                            "uids":
+                                            []
+                                        }
+                                    ]
+                                },
+                                "data":
+                                [
+                                    {
+                                        "id": "optable.co",
+                                        "segment":
+                                        [
+                                            {
+                                                "id": "67f6cec4"
+                                            },
+                                            {
+                                                "id": "4026f4f4"
+                                            },
+                                            {
+                                                "id": "082793f9"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "eids":
+                                [
+                                    {
+                                        "inserter": "optable.co",
+                                        "matcher": "optable.co",
+                                        "mm": 3,
+                                        "source": "optable.co",
+                                        "uids":
+                                        []
+                                    },
+                                    {
+                                        "inserter": "optable.co",
+                                        "matcher": "optable.co",
+                                        "mm": 3,
+                                        "source": "uidapi.com",
+                                        "uids":
+                                        []
+                                    },
+                                    {
+                                        "inserter": "optable.co",
+                                        "matcher": "optable.co",
+                                        "mm": 3,
+                                        "source": "criteo-hemapi.com",
+                                        "uids":
+                                        []
+                                    }
+                                ]
+                            },
+                            "site":
+                            {
+                                "domain": "localhost:9999",
+                                "publisher":
+                                {
+                                    "domain": "localhost:9999"
+                                },
+                                "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                                "ext":
+                                {
+                                    "data":
+                                    {
+                                        "documentLang": "en"
+                                    }
+                                },
+                                "content":
+                                {
+                                    "language": "en"
+                                }
+                            },
+                            "device":
+                            {
+                                "w": 1920,
+                                "h": 1080,
+                                "dnt": 0,
+                                "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+                                "language": "en",
+                                "ext":
+                                {
+                                    "vpw": 1920,
+                                    "vph": 934
+                                },
+                                "sua":
+                                {
+                                    "source": 1,
+                                    "platform":
+                                    {
+                                        "brand": "macOS"
+                                    },
+                                    "browsers":
+                                    [
+                                        {
+                                            "brand": "Not;A=Brand",
+                                            "version":
+                                            [
+                                                "99"
+                                            ]
+                                        },
+                                        {
+                                            "brand": "Google Chrome",
+                                            "version":
+                                            [
+                                                "139"
+                                            ]
+                                        },
+                                        {
+                                            "brand": "Chromium",
+                                            "version":
+                                            [
+                                                "139"
+                                            ]
+                                        }
+                                    ],
+                                    "mobile": 0
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "bidder": "rubicon",
+                        "params":
+                        {
+                            "accountId": 13226,
+                            "siteId": 307728,
+                            "zoneId": 1553138
+                        },
+                        "ortb2Imp":
+                        {
+                            "ext":
+                            {}
+                        },
+                        "mediaTypes":
+                        {
+                            "banner":
+                            {
+                                "sizes":
+                                [
+                                    [
+                                        728,
+                                        90
+                                    ]
+                                ]
+                            }
+                        },
+                        "adUnitCode": "/22081946781/web-sdk-demo-gam360/footer-ad",
+                        "transactionId": "9e2effd4-79ee-496a-95cf-158ba19a22a2",
+                        "adUnitId": "6e841d2c-0288-4518-9808-f702514641d6",
+                        "sizes":
+                        [
+                            [
+                                728,
+                                90
+                            ]
+                        ],
+                        "bidId": "10205528642d3987f8",
+                        "bidderRequestId": "1017e50b317b606958",
+                        "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+                        "src": "client",
+                        "metrics":
+                        {},
+                        "auctionsCount": 64,
+                        "bidRequestsCount": 64,
+                        "bidderRequestsCount": 64,
+                        "bidderWinsCount": 25,
+                        "deferBilling": false,
+                        "ortb2":
+                        {
+                            "source":
+                            {},
+                            "user":
+                            {
+                                "ext":
+                                {
+                                    "eids":
+                                    [
+                                        {
+                                            "id": "test.com",
+                                            "uids":
+                                            []
+                                        }
+                                    ]
+                                },
+                                "data":
+                                [
+                                    {
+                                        "id": "optable.co",
+                                        "segment":
+                                        [
+                                            {
+                                                "id": "67f6cec4"
+                                            },
+                                            {
+                                                "id": "4026f4f4"
+                                            },
+                                            {
+                                                "id": "082793f9"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "eids":
+                                [
+                                    {
+                                        "inserter": "optable.co",
+                                        "matcher": "optable.co",
+                                        "mm": 3,
+                                        "source": "optable.co",
+                                        "uids":
+                                        []
+                                    },
+                                    {
+                                        "inserter": "optable.co",
+                                        "matcher": "optable.co",
+                                        "mm": 3,
+                                        "source": "uidapi.com",
+                                        "uids":
+                                        []
+                                    },
+                                    {
+                                        "inserter": "optable.co",
+                                        "matcher": "optable.co",
+                                        "mm": 3,
+                                        "source": "criteo-hemapi.com",
+                                        "uids":
+                                        []
+                                    }
+                                ]
+                            },
+                            "site":
+                            {
+                                "domain": "localhost:9999",
+                                "publisher":
+                                {
+                                    "domain": "localhost:9999"
+                                },
+                                "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                                "ext":
+                                {
+                                    "data":
+                                    {
+                                        "documentLang": "en"
+                                    }
+                                },
+                                "content":
+                                {
+                                    "language": "en"
+                                }
+                            },
+                            "device":
+                            {
+                                "w": 1920,
+                                "h": 1080,
+                                "dnt": 0,
+                                "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+                                "language": "en",
+                                "ext":
+                                {
+                                    "vpw": 1920,
+                                    "vph": 934
+                                },
+                                "sua":
+                                {
+                                    "source": 1,
+                                    "platform":
+                                    {
+                                        "brand": "macOS"
+                                    },
+                                    "browsers":
+                                    [
+                                        {
+                                            "brand": "Not;A=Brand",
+                                            "version":
+                                            [
+                                                "99"
+                                            ]
+                                        },
+                                        {
+                                            "brand": "Google Chrome",
+                                            "version":
+                                            [
+                                                "139"
+                                            ]
+                                        },
+                                        {
+                                            "brand": "Chromium",
+                                            "version":
+                                            [
+                                                "139"
+                                            ]
+                                        }
+                                    ],
+                                    "mobile": 0
+                                }
+                            }
+                        }
+                    }
+                ],
+                "auctionStart": 1755699921000,
+                "timeout": 3000,
+                "refererInfo":
+                {
+                    "reachedTop": true,
+                    "isAmp": false,
+                    "numIframes": 0,
+                    "stack":
+                    [
+                        "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html"
+                    ],
+                    "topmostLocation": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                    "location": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                    "canonicalUrl": null,
+                    "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                    "domain": "localhost:9999",
+                    "ref": null,
+                    "legacy":
+                    {
+                        "reachedTop": true,
+                        "isAmp": false,
+                        "numIframes": 0,
+                        "stack":
+                        [
+                            "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html"
+                        ],
+                        "referer": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                        "canonicalUrl": null
+                    }
+                },
+                "metrics":
+                {},
+                "ortb2":
+                {
+                    "source":
+                    {},
+                    "user":
+                    {
+                        "ext":
+                        {
+                            "eids":
+                            [
+                                {
+                                    "id": "test.com",
+                                    "uids":
+                                    []
+                                }
+                            ]
+                        },
+                        "data":
+                        [
+                            {
+                                "id": "optable.co",
+                                "segment":
+                                [
+                                    {
+                                        "id": "67f6cec4"
+                                    },
+                                    {
+                                        "id": "4026f4f4"
+                                    },
+                                    {
+                                        "id": "082793f9"
+                                    }
+                                ]
+                            }
+                        ],
+                        "eids":
+                        [
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "optable.co",
+                                "uids":
+                                []
+                            },
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "uidapi.com",
+                                "uids":
+                                []
+                            },
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "criteo-hemapi.com",
+                                "uids":
+                                []
+                            }
+                        ]
+                    },
+                    "site":
+                    {
+                        "domain": "localhost:9999",
+                        "publisher":
+                        {
+                            "domain": "localhost:9999"
+                        },
+                        "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                        "ext":
+                        {
+                            "data":
+                            {
+                                "documentLang": "en"
+                            }
+                        },
+                        "content":
+                        {
+                            "language": "en"
+                        }
+                    },
+                    "device":
+                    {
+                        "w": 1920,
+                        "h": 1080,
+                        "dnt": 0,
+                        "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+                        "language": "en",
+                        "ext":
+                        {
+                            "vpw": 1920,
+                            "vph": 934
+                        },
+                        "sua":
+                        {
+                            "source": 1,
+                            "platform":
+                            {
+                                "brand": "macOS"
+                            },
+                            "browsers":
+                            [
+                                {
+                                    "brand": "Not;A=Brand",
+                                    "version":
+                                    [
+                                        "99"
+                                    ]
+                                },
+                                {
+                                    "brand": "Google Chrome",
+                                    "version":
+                                    [
+                                        "139"
+                                    ]
+                                },
+                                {
+                                    "brand": "Chromium",
+                                    "version":
+                                    [
+                                        "139"
+                                    ]
+                                }
+                            ],
+                            "mobile": 0
+                        }
+                    }
+                }
+            },
+            {
+                "bidderCode": "appnexus",
+                "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+                "bidderRequestId": "10230ea7a9f3c01968",
+                "bids":
+                [
+                    {
+                        "bidder": "appnexus",
+                        "params":
+                        {
+                            "placementId": 18349132,
+                            "publisherId": 1078346
+                        },
+                        "ortb2Imp":
+                        {
+                            "ext":
+                            {}
+                        },
+                        "mediaTypes":
+                        {
+                            "banner":
+                            {
+                                "sizes":
+                                [
+                                    [
+                                        728,
+                                        90
+                                    ]
+                                ]
+                            }
+                        },
+                        "adUnitCode": "/22081946781/web-sdk-demo-gam360/header-ad",
+                        "transactionId": "825ce508-9e54-4de6-ae37-d219a68d9e96",
+                        "adUnitId": "42701cf5-c864-4988-b1d9-f19421cb91bc",
+                        "sizes":
+                        [
+                            [
+                                728,
+                                90
+                            ]
+                        ],
+                        "bidId": "10245e478ee5897c2",
+                        "bidderRequestId": "10230ea7a9f3c01968",
+                        "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+                        "src": "client",
+                        "metrics":
+                        {},
+                        "auctionsCount": 64,
+                        "bidRequestsCount": 64,
+                        "bidderRequestsCount": 64,
+                        "bidderWinsCount": 0,
+                        "deferBilling": false,
+                        "ortb2":
+                        {
+                            "source":
+                            {},
+                            "user":
+                            {
+                                "ext":
+                                {
+                                    "eids":
+                                    [
+                                        {
+                                            "id": "test.com",
+                                            "uids":
+                                            []
+                                        }
+                                    ]
+                                },
+                                "data":
+                                [
+                                    {
+                                        "id": "optable.co",
+                                        "segment":
+                                        [
+                                            {
+                                                "id": "67f6cec4"
+                                            },
+                                            {
+                                                "id": "4026f4f4"
+                                            },
+                                            {
+                                                "id": "082793f9"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "eids":
+                                [
+                                    {
+                                        "inserter": "optable.co",
+                                        "matcher": "optable.co",
+                                        "mm": 3,
+                                        "source": "optable.co",
+                                        "uids":
+                                        []
+                                    },
+                                    {
+                                        "inserter": "optable.co",
+                                        "matcher": "optable.co",
+                                        "mm": 3,
+                                        "source": "uidapi.com",
+                                        "uids":
+                                        []
+                                    },
+                                    {
+                                        "inserter": "optable.co",
+                                        "matcher": "optable.co",
+                                        "mm": 3,
+                                        "source": "criteo-hemapi.com",
+                                        "uids":
+                                        []
+                                    }
+                                ]
+                            },
+                            "site":
+                            {
+                                "domain": "localhost:9999",
+                                "publisher":
+                                {
+                                    "domain": "localhost:9999"
+                                },
+                                "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                                "ext":
+                                {
+                                    "data":
+                                    {
+                                        "documentLang": "en"
+                                    }
+                                },
+                                "content":
+                                {
+                                    "language": "en"
+                                }
+                            },
+                            "device":
+                            {
+                                "w": 1920,
+                                "h": 1080,
+                                "dnt": 0,
+                                "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+                                "language": "en",
+                                "ext":
+                                {
+                                    "vpw": 1920,
+                                    "vph": 934
+                                },
+                                "sua":
+                                {
+                                    "source": 1,
+                                    "platform":
+                                    {
+                                        "brand": "macOS"
+                                    },
+                                    "browsers":
+                                    [
+                                        {
+                                            "brand": "Not;A=Brand",
+                                            "version":
+                                            [
+                                                "99"
+                                            ]
+                                        },
+                                        {
+                                            "brand": "Google Chrome",
+                                            "version":
+                                            [
+                                                "139"
+                                            ]
+                                        },
+                                        {
+                                            "brand": "Chromium",
+                                            "version":
+                                            [
+                                                "139"
+                                            ]
+                                        }
+                                    ],
+                                    "mobile": 0
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "bidder": "appnexus",
+                        "params":
+                        {
+                            "placementId": 18349136,
+                            "publisherId": 1078346
+                        },
+                        "ortb2Imp":
+                        {
+                            "ext":
+                            {}
+                        },
+                        "mediaTypes":
+                        {
+                            "banner":
+                            {
+                                "sizes":
+                                [
+                                    [
+                                        250,
+                                        250
+                                    ],
+                                    [
+                                        300,
+                                        250
+                                    ],
+                                    [
+                                        200,
+                                        200
+                                    ]
+                                ]
+                            }
+                        },
+                        "adUnitCode": "/22081946781/web-sdk-demo-gam360/box-ad",
+                        "transactionId": "1035df2c-ef47-4638-acdd-b5c65268580f",
+                        "adUnitId": "c5103bf6-2024-4453-8171-c91021fca868",
+                        "sizes":
+                        [
+                            [
+                                250,
+                                250
+                            ],
+                            [
+                                300,
+                                250
+                            ],
+                            [
+                                200,
+                                200
+                            ]
+                        ],
+                        "bidId": "10256ff0507e20be18",
+                        "bidderRequestId": "10230ea7a9f3c01968",
+                        "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+                        "src": "client",
+                        "metrics":
+                        {},
+                        "auctionsCount": 64,
+                        "bidRequestsCount": 64,
+                        "bidderRequestsCount": 64,
+                        "bidderWinsCount": 0,
+                        "deferBilling": false,
+                        "ortb2":
+                        {
+                            "source":
+                            {},
+                            "user":
+                            {
+                                "ext":
+                                {
+                                    "eids":
+                                    [
+                                        {
+                                            "id": "test.com",
+                                            "uids":
+                                            []
+                                        }
+                                    ]
+                                },
+                                "data":
+                                [
+                                    {
+                                        "id": "optable.co",
+                                        "segment":
+                                        [
+                                            {
+                                                "id": "67f6cec4"
+                                            },
+                                            {
+                                                "id": "4026f4f4"
+                                            },
+                                            {
+                                                "id": "082793f9"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "eids":
+                                [
+                                    {
+                                        "inserter": "optable.co",
+                                        "matcher": "optable.co",
+                                        "mm": 3,
+                                        "source": "optable.co",
+                                        "uids":
+                                        []
+                                    },
+                                    {
+                                        "inserter": "optable.co",
+                                        "matcher": "optable.co",
+                                        "mm": 3,
+                                        "source": "uidapi.com",
+                                        "uids":
+                                        []
+                                    },
+                                    {
+                                        "inserter": "optable.co",
+                                        "matcher": "optable.co",
+                                        "mm": 3,
+                                        "source": "criteo-hemapi.com",
+                                        "uids":
+                                        []
+                                    }
+                                ]
+                            },
+                            "site":
+                            {
+                                "domain": "localhost:9999",
+                                "publisher":
+                                {
+                                    "domain": "localhost:9999"
+                                },
+                                "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                                "ext":
+                                {
+                                    "data":
+                                    {
+                                        "documentLang": "en"
+                                    }
+                                },
+                                "content":
+                                {
+                                    "language": "en"
+                                }
+                            },
+                            "device":
+                            {
+                                "w": 1920,
+                                "h": 1080,
+                                "dnt": 0,
+                                "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+                                "language": "en",
+                                "ext":
+                                {
+                                    "vpw": 1920,
+                                    "vph": 934
+                                },
+                                "sua":
+                                {
+                                    "source": 1,
+                                    "platform":
+                                    {
+                                        "brand": "macOS"
+                                    },
+                                    "browsers":
+                                    [
+                                        {
+                                            "brand": "Not;A=Brand",
+                                            "version":
+                                            [
+                                                "99"
+                                            ]
+                                        },
+                                        {
+                                            "brand": "Google Chrome",
+                                            "version":
+                                            [
+                                                "139"
+                                            ]
+                                        },
+                                        {
+                                            "brand": "Chromium",
+                                            "version":
+                                            [
+                                                "139"
+                                            ]
+                                        }
+                                    ],
+                                    "mobile": 0
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "bidder": "appnexus",
+                        "params":
+                        {
+                            "placementId": 18349133,
+                            "publisherId": 1078346
+                        },
+                        "ortb2Imp":
+                        {
+                            "ext":
+                            {}
+                        },
+                        "mediaTypes":
+                        {
+                            "banner":
+                            {
+                                "sizes":
+                                [
+                                    [
+                                        728,
+                                        90
+                                    ]
+                                ]
+                            }
+                        },
+                        "adUnitCode": "/22081946781/web-sdk-demo-gam360/footer-ad",
+                        "transactionId": "9e2effd4-79ee-496a-95cf-158ba19a22a2",
+                        "adUnitId": "6e841d2c-0288-4518-9808-f702514641d6",
+                        "sizes":
+                        [
+                            [
+                                728,
+                                90
+                            ]
+                        ],
+                        "bidId": "1026e2fdbba694fbf8",
+                        "bidderRequestId": "10230ea7a9f3c01968",
+                        "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+                        "src": "client",
+                        "metrics":
+                        {},
+                        "auctionsCount": 64,
+                        "bidRequestsCount": 64,
+                        "bidderRequestsCount": 64,
+                        "bidderWinsCount": 0,
+                        "deferBilling": false,
+                        "ortb2":
+                        {
+                            "source":
+                            {},
+                            "user":
+                            {
+                                "ext":
+                                {
+                                    "eids":
+                                    [
+                                        {
+                                            "id": "test.com",
+                                            "uids":
+                                            []
+                                        }
+                                    ]
+                                },
+                                "data":
+                                [
+                                    {
+                                        "id": "optable.co",
+                                        "segment":
+                                        [
+                                            {
+                                                "id": "67f6cec4"
+                                            },
+                                            {
+                                                "id": "4026f4f4"
+                                            },
+                                            {
+                                                "id": "082793f9"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "eids":
+                                [
+                                    {
+                                        "inserter": "optable.co",
+                                        "matcher": "optable.co",
+                                        "mm": 3,
+                                        "source": "optable.co",
+                                        "uids":
+                                        []
+                                    },
+                                    {
+                                        "inserter": "optable.co",
+                                        "matcher": "optable.co",
+                                        "mm": 3,
+                                        "source": "uidapi.com",
+                                        "uids":
+                                        []
+                                    },
+                                    {
+                                        "inserter": "optable.co",
+                                        "matcher": "optable.co",
+                                        "mm": 3,
+                                        "source": "criteo-hemapi.com",
+                                        "uids":
+                                        []
+                                    }
+                                ]
+                            },
+                            "site":
+                            {
+                                "domain": "localhost:9999",
+                                "publisher":
+                                {
+                                    "domain": "localhost:9999"
+                                },
+                                "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                                "ext":
+                                {
+                                    "data":
+                                    {
+                                        "documentLang": "en"
+                                    }
+                                },
+                                "content":
+                                {
+                                    "language": "en"
+                                }
+                            },
+                            "device":
+                            {
+                                "w": 1920,
+                                "h": 1080,
+                                "dnt": 0,
+                                "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+                                "language": "en",
+                                "ext":
+                                {
+                                    "vpw": 1920,
+                                    "vph": 934
+                                },
+                                "sua":
+                                {
+                                    "source": 1,
+                                    "platform":
+                                    {
+                                        "brand": "macOS"
+                                    },
+                                    "browsers":
+                                    [
+                                        {
+                                            "brand": "Not;A=Brand",
+                                            "version":
+                                            [
+                                                "99"
+                                            ]
+                                        },
+                                        {
+                                            "brand": "Google Chrome",
+                                            "version":
+                                            [
+                                                "139"
+                                            ]
+                                        },
+                                        {
+                                            "brand": "Chromium",
+                                            "version":
+                                            [
+                                                "139"
+                                            ]
+                                        }
+                                    ],
+                                    "mobile": 0
+                                }
+                            }
+                        }
+                    }
+                ],
+                "auctionStart": 1755699921000,
+                "timeout": 3000,
+                "refererInfo":
+                {
+                    "reachedTop": true,
+                    "isAmp": false,
+                    "numIframes": 0,
+                    "stack":
+                    [
+                        "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html"
+                    ],
+                    "topmostLocation": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                    "location": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                    "canonicalUrl": null,
+                    "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                    "domain": "localhost:9999",
+                    "ref": null,
+                    "legacy":
+                    {
+                        "reachedTop": true,
+                        "isAmp": false,
+                        "numIframes": 0,
+                        "stack":
+                        [
+                            "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html"
+                        ],
+                        "referer": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                        "canonicalUrl": null
+                    }
+                },
+                "metrics":
+                {},
+                "ortb2":
+                {
+                    "source":
+                    {},
+                    "user":
+                    {
+                        "ext":
+                        {
+                            "eids":
+                            [
+                                {
+                                    "id": "test.com",
+                                    "uids":
+                                    []
+                                }
+                            ]
+                        },
+                        "data":
+                        [
+                            {
+                                "id": "optable.co",
+                                "segment":
+                                [
+                                    {
+                                        "id": "67f6cec4"
+                                    },
+                                    {
+                                        "id": "4026f4f4"
+                                    },
+                                    {
+                                        "id": "082793f9"
+                                    }
+                                ]
+                            }
+                        ],
+                        "eids":
+                        [
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "optable.co",
+                                "uids":
+                                []
+                            },
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "uidapi.com",
+                                "uids":
+                                []
+                            },
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "criteo-hemapi.com",
+                                "uids":
+                                []
+                            }
+                        ]
+                    },
+                    "site":
+                    {
+                        "domain": "localhost:9999",
+                        "publisher":
+                        {
+                            "domain": "localhost:9999"
+                        },
+                        "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                        "ext":
+                        {
+                            "data":
+                            {
+                                "documentLang": "en"
+                            }
+                        },
+                        "content":
+                        {
+                            "language": "en"
+                        }
+                    },
+                    "device":
+                    {
+                        "w": 1920,
+                        "h": 1080,
+                        "dnt": 0,
+                        "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+                        "language": "en",
+                        "ext":
+                        {
+                            "vpw": 1920,
+                            "vph": 934
+                        },
+                        "sua":
+                        {
+                            "source": 1,
+                            "platform":
+                            {
+                                "brand": "macOS"
+                            },
+                            "browsers":
+                            [
+                                {
+                                    "brand": "Not;A=Brand",
+                                    "version":
+                                    [
+                                        "99"
+                                    ]
+                                },
+                                {
+                                    "brand": "Google Chrome",
+                                    "version":
+                                    [
+                                        "139"
+                                    ]
+                                },
+                                {
+                                    "brand": "Chromium",
+                                    "version":
+                                    [
+                                        "139"
+                                    ]
+                                }
+                            ],
+                            "mobile": 0
+                        }
+                    }
+                }
+            },
+            {
+                "bidderCode": "triplelift",
+                "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+                "bidderRequestId": "102726d7e157b4986",
+                "bids":
+                [
+                    {
+                        "bidder": "triplelift",
+                        "params":
+                        {
+                            "inventoryCode": "fnc_desk_hp_lb1"
+                        },
+                        "ortb2Imp":
+                        {
+                            "ext":
+                            {}
+                        },
+                        "mediaTypes":
+                        {
+                            "banner":
+                            {
+                                "sizes":
+                                [
+                                    [
+                                        728,
+                                        90
+                                    ]
+                                ]
+                            }
+                        },
+                        "adUnitCode": "/22081946781/web-sdk-demo-gam360/header-ad",
+                        "transactionId": "825ce508-9e54-4de6-ae37-d219a68d9e96",
+                        "adUnitId": "42701cf5-c864-4988-b1d9-f19421cb91bc",
+                        "sizes":
+                        [
+                            [
+                                728,
+                                90
+                            ]
+                        ],
+                        "bidId": "1028f08d8e694f6d08",
+                        "bidderRequestId": "102726d7e157b4986",
+                        "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+                        "src": "client",
+                        "metrics":
+                        {},
+                        "auctionsCount": 64,
+                        "bidRequestsCount": 64,
+                        "bidderRequestsCount": 64,
+                        "bidderWinsCount": 27,
+                        "deferBilling": false,
+                        "ortb2":
+                        {
+                            "source":
+                            {},
+                            "user":
+                            {
+                                "ext":
+                                {
+                                    "eids":
+                                    [
+                                        {
+                                            "id": "test.com",
+                                            "uids":
+                                            []
+                                        }
+                                    ]
+                                },
+                                "data":
+                                [
+                                    {
+                                        "id": "optable.co",
+                                        "segment":
+                                        [
+                                            {
+                                                "id": "67f6cec4"
+                                            },
+                                            {
+                                                "id": "4026f4f4"
+                                            },
+                                            {
+                                                "id": "082793f9"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "eids":
+                                [
+                                    {
+                                        "inserter": "optable.co",
+                                        "matcher": "optable.co",
+                                        "mm": 3,
+                                        "source": "optable.co",
+                                        "uids":
+                                        []
+                                    },
+                                    {
+                                        "inserter": "optable.co",
+                                        "matcher": "optable.co",
+                                        "mm": 3,
+                                        "source": "uidapi.com",
+                                        "uids":
+                                        []
+                                    },
+                                    {
+                                        "inserter": "optable.co",
+                                        "matcher": "optable.co",
+                                        "mm": 3,
+                                        "source": "criteo-hemapi.com",
+                                        "uids":
+                                        []
+                                    }
+                                ]
+                            },
+                            "site":
+                            {
+                                "domain": "localhost:9999",
+                                "publisher":
+                                {
+                                    "domain": "localhost:9999"
+                                },
+                                "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                                "ext":
+                                {
+                                    "data":
+                                    {
+                                        "documentLang": "en"
+                                    }
+                                },
+                                "content":
+                                {
+                                    "language": "en"
+                                }
+                            },
+                            "device":
+                            {
+                                "w": 1920,
+                                "h": 1080,
+                                "dnt": 0,
+                                "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+                                "language": "en",
+                                "ext":
+                                {
+                                    "vpw": 1920,
+                                    "vph": 934
+                                },
+                                "sua":
+                                {
+                                    "source": 1,
+                                    "platform":
+                                    {
+                                        "brand": "macOS"
+                                    },
+                                    "browsers":
+                                    [
+                                        {
+                                            "brand": "Not;A=Brand",
+                                            "version":
+                                            [
+                                                "99"
+                                            ]
+                                        },
+                                        {
+                                            "brand": "Google Chrome",
+                                            "version":
+                                            [
+                                                "139"
+                                            ]
+                                        },
+                                        {
+                                            "brand": "Chromium",
+                                            "version":
+                                            [
+                                                "139"
+                                            ]
+                                        }
+                                    ],
+                                    "mobile": 0
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "bidder": "triplelift",
+                        "params":
+                        {
+                            "inventoryCode": "fnc_desk_hp_mr1"
+                        },
+                        "ortb2Imp":
+                        {
+                            "ext":
+                            {}
+                        },
+                        "mediaTypes":
+                        {
+                            "banner":
+                            {
+                                "sizes":
+                                [
+                                    [
+                                        250,
+                                        250
+                                    ],
+                                    [
+                                        300,
+                                        250
+                                    ],
+                                    [
+                                        200,
+                                        200
+                                    ]
+                                ]
+                            }
+                        },
+                        "adUnitCode": "/22081946781/web-sdk-demo-gam360/box-ad",
+                        "transactionId": "1035df2c-ef47-4638-acdd-b5c65268580f",
+                        "adUnitId": "c5103bf6-2024-4453-8171-c91021fca868",
+                        "sizes":
+                        [
+                            [
+                                250,
+                                250
+                            ],
+                            [
+                                300,
+                                250
+                            ],
+                            [
+                                200,
+                                200
+                            ]
+                        ],
+                        "bidId": "102986a444a1fc8118",
+                        "bidderRequestId": "102726d7e157b4986",
+                        "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+                        "src": "client",
+                        "metrics":
+                        {},
+                        "auctionsCount": 64,
+                        "bidRequestsCount": 64,
+                        "bidderRequestsCount": 64,
+                        "bidderWinsCount": 27,
+                        "deferBilling": false,
+                        "ortb2":
+                        {
+                            "source":
+                            {},
+                            "user":
+                            {
+                                "ext":
+                                {
+                                    "eids":
+                                    [
+                                        {
+                                            "id": "test.com",
+                                            "uids":
+                                            []
+                                        }
+                                    ]
+                                },
+                                "data":
+                                [
+                                    {
+                                        "id": "optable.co",
+                                        "segment":
+                                        [
+                                            {
+                                                "id": "67f6cec4"
+                                            },
+                                            {
+                                                "id": "4026f4f4"
+                                            },
+                                            {
+                                                "id": "082793f9"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "eids":
+                                [
+                                    {
+                                        "inserter": "optable.co",
+                                        "matcher": "optable.co",
+                                        "mm": 3,
+                                        "source": "optable.co",
+                                        "uids":
+                                        []
+                                    },
+                                    {
+                                        "inserter": "optable.co",
+                                        "matcher": "optable.co",
+                                        "mm": 3,
+                                        "source": "uidapi.com",
+                                        "uids":
+                                        []
+                                    },
+                                    {
+                                        "inserter": "optable.co",
+                                        "matcher": "optable.co",
+                                        "mm": 3,
+                                        "source": "criteo-hemapi.com",
+                                        "uids":
+                                        []
+                                    }
+                                ]
+                            },
+                            "site":
+                            {
+                                "domain": "localhost:9999",
+                                "publisher":
+                                {
+                                    "domain": "localhost:9999"
+                                },
+                                "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                                "ext":
+                                {
+                                    "data":
+                                    {
+                                        "documentLang": "en"
+                                    }
+                                },
+                                "content":
+                                {
+                                    "language": "en"
+                                }
+                            },
+                            "device":
+                            {
+                                "w": 1920,
+                                "h": 1080,
+                                "dnt": 0,
+                                "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+                                "language": "en",
+                                "ext":
+                                {
+                                    "vpw": 1920,
+                                    "vph": 934
+                                },
+                                "sua":
+                                {
+                                    "source": 1,
+                                    "platform":
+                                    {
+                                        "brand": "macOS"
+                                    },
+                                    "browsers":
+                                    [
+                                        {
+                                            "brand": "Not;A=Brand",
+                                            "version":
+                                            [
+                                                "99"
+                                            ]
+                                        },
+                                        {
+                                            "brand": "Google Chrome",
+                                            "version":
+                                            [
+                                                "139"
+                                            ]
+                                        },
+                                        {
+                                            "brand": "Chromium",
+                                            "version":
+                                            [
+                                                "139"
+                                            ]
+                                        }
+                                    ],
+                                    "mobile": 0
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "bidder": "triplelift",
+                        "params":
+                        {
+                            "inventoryCode": "fnc_desk_hp_lb2"
+                        },
+                        "ortb2Imp":
+                        {
+                            "ext":
+                            {}
+                        },
+                        "mediaTypes":
+                        {
+                            "banner":
+                            {
+                                "sizes":
+                                [
+                                    [
+                                        728,
+                                        90
+                                    ]
+                                ]
+                            }
+                        },
+                        "adUnitCode": "/22081946781/web-sdk-demo-gam360/footer-ad",
+                        "transactionId": "9e2effd4-79ee-496a-95cf-158ba19a22a2",
+                        "adUnitId": "6e841d2c-0288-4518-9808-f702514641d6",
+                        "sizes":
+                        [
+                            [
+                                728,
+                                90
+                            ]
+                        ],
+                        "bidId": "10307bf7301bbd83c8",
+                        "bidderRequestId": "102726d7e157b4986",
+                        "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+                        "src": "client",
+                        "metrics":
+                        {},
+                        "auctionsCount": 64,
+                        "bidRequestsCount": 64,
+                        "bidderRequestsCount": 64,
+                        "bidderWinsCount": 0,
+                        "deferBilling": false,
+                        "ortb2":
+                        {
+                            "source":
+                            {},
+                            "user":
+                            {
+                                "ext":
+                                {
+                                    "eids":
+                                    [
+                                        {
+                                            "id": "test.com",
+                                            "uids":
+                                            []
+                                        }
+                                    ]
+                                },
+                                "data":
+                                [
+                                    {
+                                        "id": "optable.co",
+                                        "segment":
+                                        [
+                                            {
+                                                "id": "67f6cec4"
+                                            },
+                                            {
+                                                "id": "4026f4f4"
+                                            },
+                                            {
+                                                "id": "082793f9"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "eids":
+                                [
+                                    {
+                                        "inserter": "optable.co",
+                                        "matcher": "optable.co",
+                                        "mm": 3,
+                                        "source": "optable.co",
+                                        "uids":
+                                        []
+                                    },
+                                    {
+                                        "inserter": "optable.co",
+                                        "matcher": "optable.co",
+                                        "mm": 3,
+                                        "source": "uidapi.com",
+                                        "uids":
+                                        []
+                                    },
+                                    {
+                                        "inserter": "optable.co",
+                                        "matcher": "optable.co",
+                                        "mm": 3,
+                                        "source": "criteo-hemapi.com",
+                                        "uids":
+                                        []
+                                    }
+                                ]
+                            },
+                            "site":
+                            {
+                                "domain": "localhost:9999",
+                                "publisher":
+                                {
+                                    "domain": "localhost:9999"
+                                },
+                                "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                                "ext":
+                                {
+                                    "data":
+                                    {
+                                        "documentLang": "en"
+                                    }
+                                },
+                                "content":
+                                {
+                                    "language": "en"
+                                }
+                            },
+                            "device":
+                            {
+                                "w": 1920,
+                                "h": 1080,
+                                "dnt": 0,
+                                "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+                                "language": "en",
+                                "ext":
+                                {
+                                    "vpw": 1920,
+                                    "vph": 934
+                                },
+                                "sua":
+                                {
+                                    "source": 1,
+                                    "platform":
+                                    {
+                                        "brand": "macOS"
+                                    },
+                                    "browsers":
+                                    [
+                                        {
+                                            "brand": "Not;A=Brand",
+                                            "version":
+                                            [
+                                                "99"
+                                            ]
+                                        },
+                                        {
+                                            "brand": "Google Chrome",
+                                            "version":
+                                            [
+                                                "139"
+                                            ]
+                                        },
+                                        {
+                                            "brand": "Chromium",
+                                            "version":
+                                            [
+                                                "139"
+                                            ]
+                                        }
+                                    ],
+                                    "mobile": 0
+                                }
+                            }
+                        }
+                    }
+                ],
+                "auctionStart": 1755699921000,
+                "timeout": 3000,
+                "refererInfo":
+                {
+                    "reachedTop": true,
+                    "isAmp": false,
+                    "numIframes": 0,
+                    "stack":
+                    [
+                        "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html"
+                    ],
+                    "topmostLocation": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                    "location": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                    "canonicalUrl": null,
+                    "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                    "domain": "localhost:9999",
+                    "ref": null,
+                    "legacy":
+                    {
+                        "reachedTop": true,
+                        "isAmp": false,
+                        "numIframes": 0,
+                        "stack":
+                        [
+                            "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html"
+                        ],
+                        "referer": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                        "canonicalUrl": null
+                    }
+                },
+                "metrics":
+                {},
+                "ortb2":
+                {
+                    "source":
+                    {},
+                    "user":
+                    {
+                        "ext":
+                        {
+                            "eids":
+                            [
+                                {
+                                    "id": "test.com",
+                                    "uids":
+                                    []
+                                }
+                            ]
+                        },
+                        "data":
+                        [
+                            {
+                                "id": "optable.co",
+                                "segment":
+                                [
+                                    {
+                                        "id": "67f6cec4"
+                                    },
+                                    {
+                                        "id": "4026f4f4"
+                                    },
+                                    {
+                                        "id": "082793f9"
+                                    }
+                                ]
+                            }
+                        ],
+                        "eids":
+                        [
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "optable.co",
+                                "uids":
+                                []
+                            },
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "uidapi.com",
+                                "uids":
+                                []
+                            },
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "criteo-hemapi.com",
+                                "uids":
+                                []
+                            }
+                        ]
+                    },
+                    "site":
+                    {
+                        "domain": "localhost:9999",
+                        "publisher":
+                        {
+                            "domain": "localhost:9999"
+                        },
+                        "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                        "ext":
+                        {
+                            "data":
+                            {
+                                "documentLang": "en"
+                            }
+                        },
+                        "content":
+                        {
+                            "language": "en"
+                        }
+                    },
+                    "device":
+                    {
+                        "w": 1920,
+                        "h": 1080,
+                        "dnt": 0,
+                        "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+                        "language": "en",
+                        "ext":
+                        {
+                            "vpw": 1920,
+                            "vph": 934
+                        },
+                        "sua":
+                        {
+                            "source": 1,
+                            "platform":
+                            {
+                                "brand": "macOS"
+                            },
+                            "browsers":
+                            [
+                                {
+                                    "brand": "Not;A=Brand",
+                                    "version":
+                                    [
+                                        "99"
+                                    ]
+                                },
+                                {
+                                    "brand": "Google Chrome",
+                                    "version":
+                                    [
+                                        "139"
+                                    ]
+                                },
+                                {
+                                    "brand": "Chromium",
+                                    "version":
+                                    [
+                                        "139"
+                                    ]
+                                }
+                            ],
+                            "mobile": 0
+                        }
+                    }
+                }
+            }
+        ],
+        "noBids":
+        [],
+        "bidsReceived":
+        [],
+        "bidsRejected":
+        [],
+        "winningBids":
+        [],
+        "timeout": 3000,
+        "metrics":
+        {},
+        "seatNonBids":
+        []
+    }
+}
+{
+    "serverTimestamp": "2025-08-20T14:25:21.215Z",
+    "clientIP": "::1",
+    "eventType": "bidRequested",
+    "timestamp": "2025-08-20T14:25:21.167Z",
+    "data":
+    {
+        "bidderCode": "rubicon",
+        "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+        "bidderRequestId": "1017e50b317b606958",
+        "bids":
+        [
+            {
+                "bidder": "rubicon",
+                "params":
+                {
+                    "accountId": 13226,
+                    "siteId": 307728,
+                    "zoneId": 1553136
+                },
+                "ortb2Imp":
+                {
+                    "ext":
+                    {}
+                },
+                "mediaTypes":
+                {
+                    "banner":
+                    {
+                        "sizes":
+                        [
+                            [
+                                728,
+                                90
+                            ]
+                        ]
+                    }
+                },
+                "adUnitCode": "/22081946781/web-sdk-demo-gam360/header-ad",
+                "transactionId": "825ce508-9e54-4de6-ae37-d219a68d9e96",
+                "adUnitId": "42701cf5-c864-4988-b1d9-f19421cb91bc",
+                "sizes":
+                [
+                    [
+                        728,
+                        90
+                    ]
+                ],
+                "bidId": "101817ce855141f29",
+                "bidderRequestId": "1017e50b317b606958",
+                "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+                "src": "client",
+                "metrics":
+                {},
+                "auctionsCount": 64,
+                "bidRequestsCount": 64,
+                "bidderRequestsCount": 64,
+                "bidderWinsCount": 0,
+                "deferBilling": false,
+                "ortb2":
+                {
+                    "source":
+                    {},
+                    "user":
+                    {
+                        "ext":
+                        {
+                            "eids":
+                            [
+                                {
+                                    "id": "test.com",
+                                    "uids":
+                                    []
+                                }
+                            ]
+                        },
+                        "data":
+                        [
+                            {
+                                "id": "optable.co",
+                                "segment":
+                                [
+                                    {
+                                        "id": "67f6cec4"
+                                    },
+                                    {
+                                        "id": "4026f4f4"
+                                    },
+                                    {
+                                        "id": "082793f9"
+                                    }
+                                ]
+                            }
+                        ],
+                        "eids":
+                        [
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "optable.co",
+                                "uids":
+                                []
+                            },
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "uidapi.com",
+                                "uids":
+                                []
+                            },
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "criteo-hemapi.com",
+                                "uids":
+                                []
+                            }
+                        ]
+                    },
+                    "site":
+                    {
+                        "domain": "localhost:9999",
+                        "publisher":
+                        {
+                            "domain": "localhost:9999"
+                        },
+                        "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                        "ext":
+                        {
+                            "data":
+                            {
+                                "documentLang": "en"
+                            }
+                        },
+                        "content":
+                        {
+                            "language": "en"
+                        }
+                    },
+                    "device":
+                    {
+                        "w": 1920,
+                        "h": 1080,
+                        "dnt": 0,
+                        "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+                        "language": "en",
+                        "ext":
+                        {
+                            "vpw": 1920,
+                            "vph": 934
+                        },
+                        "sua":
+                        {
+                            "source": 1,
+                            "platform":
+                            {
+                                "brand": "macOS"
+                            },
+                            "browsers":
+                            [
+                                {
+                                    "brand": "Not;A=Brand",
+                                    "version":
+                                    [
+                                        "99"
+                                    ]
+                                },
+                                {
+                                    "brand": "Google Chrome",
+                                    "version":
+                                    [
+                                        "139"
+                                    ]
+                                },
+                                {
+                                    "brand": "Chromium",
+                                    "version":
+                                    [
+                                        "139"
+                                    ]
+                                }
+                            ],
+                            "mobile": 0
+                        }
+                    }
+                }
+            },
+            {
+                "bidder": "rubicon",
+                "params":
+                {
+                    "accountId": 13226,
+                    "siteId": 307728,
+                    "zoneId": 1553140
+                },
+                "ortb2Imp":
+                {
+                    "ext":
+                    {}
+                },
+                "mediaTypes":
+                {
+                    "banner":
+                    {
+                        "sizes":
+                        [
+                            [
+                                250,
+                                250
+                            ],
+                            [
+                                300,
+                                250
+                            ],
+                            [
+                                200,
+                                200
+                            ]
+                        ]
+                    }
+                },
+                "adUnitCode": "/22081946781/web-sdk-demo-gam360/box-ad",
+                "transactionId": "1035df2c-ef47-4638-acdd-b5c65268580f",
+                "adUnitId": "c5103bf6-2024-4453-8171-c91021fca868",
+                "sizes":
+                [
+                    [
+                        250,
+                        250
+                    ],
+                    [
+                        300,
+                        250
+                    ],
+                    [
+                        200,
+                        200
+                    ]
+                ],
+                "bidId": "1019547a034d7f9c",
+                "bidderRequestId": "1017e50b317b606958",
+                "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+                "src": "client",
+                "metrics":
+                {},
+                "auctionsCount": 64,
+                "bidRequestsCount": 64,
+                "bidderRequestsCount": 64,
+                "bidderWinsCount": 0,
+                "deferBilling": false,
+                "ortb2":
+                {
+                    "source":
+                    {},
+                    "user":
+                    {
+                        "ext":
+                        {
+                            "eids":
+                            [
+                                {
+                                    "id": "test.com",
+                                    "uids":
+                                    []
+                                }
+                            ]
+                        },
+                        "data":
+                        [
+                            {
+                                "id": "optable.co",
+                                "segment":
+                                [
+                                    {
+                                        "id": "67f6cec4"
+                                    },
+                                    {
+                                        "id": "4026f4f4"
+                                    },
+                                    {
+                                        "id": "082793f9"
+                                    }
+                                ]
+                            }
+                        ],
+                        "eids":
+                        [
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "optable.co",
+                                "uids":
+                                []
+                            },
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "uidapi.com",
+                                "uids":
+                                []
+                            },
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "criteo-hemapi.com",
+                                "uids":
+                                []
+                            }
+                        ]
+                    },
+                    "site":
+                    {
+                        "domain": "localhost:9999",
+                        "publisher":
+                        {
+                            "domain": "localhost:9999"
+                        },
+                        "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                        "ext":
+                        {
+                            "data":
+                            {
+                                "documentLang": "en"
+                            }
+                        },
+                        "content":
+                        {
+                            "language": "en"
+                        }
+                    },
+                    "device":
+                    {
+                        "w": 1920,
+                        "h": 1080,
+                        "dnt": 0,
+                        "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+                        "language": "en",
+                        "ext":
+                        {
+                            "vpw": 1920,
+                            "vph": 934
+                        },
+                        "sua":
+                        {
+                            "source": 1,
+                            "platform":
+                            {
+                                "brand": "macOS"
+                            },
+                            "browsers":
+                            [
+                                {
+                                    "brand": "Not;A=Brand",
+                                    "version":
+                                    [
+                                        "99"
+                                    ]
+                                },
+                                {
+                                    "brand": "Google Chrome",
+                                    "version":
+                                    [
+                                        "139"
+                                    ]
+                                },
+                                {
+                                    "brand": "Chromium",
+                                    "version":
+                                    [
+                                        "139"
+                                    ]
+                                }
+                            ],
+                            "mobile": 0
+                        }
+                    }
+                }
+            },
+            {
+                "bidder": "rubicon",
+                "params":
+                {
+                    "accountId": 13226,
+                    "siteId": 307728,
+                    "zoneId": 1553138
+                },
+                "ortb2Imp":
+                {
+                    "ext":
+                    {}
+                },
+                "mediaTypes":
+                {
+                    "banner":
+                    {
+                        "sizes":
+                        [
+                            [
+                                728,
+                                90
+                            ]
+                        ]
+                    }
+                },
+                "adUnitCode": "/22081946781/web-sdk-demo-gam360/footer-ad",
+                "transactionId": "9e2effd4-79ee-496a-95cf-158ba19a22a2",
+                "adUnitId": "6e841d2c-0288-4518-9808-f702514641d6",
+                "sizes":
+                [
+                    [
+                        728,
+                        90
+                    ]
+                ],
+                "bidId": "10205528642d3987f8",
+                "bidderRequestId": "1017e50b317b606958",
+                "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+                "src": "client",
+                "metrics":
+                {},
+                "auctionsCount": 64,
+                "bidRequestsCount": 64,
+                "bidderRequestsCount": 64,
+                "bidderWinsCount": 25,
+                "deferBilling": false,
+                "ortb2":
+                {
+                    "source":
+                    {},
+                    "user":
+                    {
+                        "ext":
+                        {
+                            "eids":
+                            [
+                                {
+                                    "id": "test.com",
+                                    "uids":
+                                    []
+                                }
+                            ]
+                        },
+                        "data":
+                        [
+                            {
+                                "id": "optable.co",
+                                "segment":
+                                [
+                                    {
+                                        "id": "67f6cec4"
+                                    },
+                                    {
+                                        "id": "4026f4f4"
+                                    },
+                                    {
+                                        "id": "082793f9"
+                                    }
+                                ]
+                            }
+                        ],
+                        "eids":
+                        [
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "optable.co",
+                                "uids":
+                                []
+                            },
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "uidapi.com",
+                                "uids":
+                                []
+                            },
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "criteo-hemapi.com",
+                                "uids":
+                                []
+                            }
+                        ]
+                    },
+                    "site":
+                    {
+                        "domain": "localhost:9999",
+                        "publisher":
+                        {
+                            "domain": "localhost:9999"
+                        },
+                        "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                        "ext":
+                        {
+                            "data":
+                            {
+                                "documentLang": "en"
+                            }
+                        },
+                        "content":
+                        {
+                            "language": "en"
+                        }
+                    },
+                    "device":
+                    {
+                        "w": 1920,
+                        "h": 1080,
+                        "dnt": 0,
+                        "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+                        "language": "en",
+                        "ext":
+                        {
+                            "vpw": 1920,
+                            "vph": 934
+                        },
+                        "sua":
+                        {
+                            "source": 1,
+                            "platform":
+                            {
+                                "brand": "macOS"
+                            },
+                            "browsers":
+                            [
+                                {
+                                    "brand": "Not;A=Brand",
+                                    "version":
+                                    [
+                                        "99"
+                                    ]
+                                },
+                                {
+                                    "brand": "Google Chrome",
+                                    "version":
+                                    [
+                                        "139"
+                                    ]
+                                },
+                                {
+                                    "brand": "Chromium",
+                                    "version":
+                                    [
+                                        "139"
+                                    ]
+                                }
+                            ],
+                            "mobile": 0
+                        }
+                    }
+                }
+            }
+        ],
+        "auctionStart": 1755699921000,
+        "timeout": 3000,
+        "refererInfo":
+        {
+            "reachedTop": true,
+            "isAmp": false,
+            "numIframes": 0,
+            "stack":
+            [
+                "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html"
+            ],
+            "topmostLocation": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+            "location": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+            "canonicalUrl": null,
+            "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+            "domain": "localhost:9999",
+            "ref": null,
+            "legacy":
+            {
+                "reachedTop": true,
+                "isAmp": false,
+                "numIframes": 0,
+                "stack":
+                [
+                    "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html"
+                ],
+                "referer": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                "canonicalUrl": null
+            }
+        },
+        "metrics":
+        {},
+        "ortb2":
+        {
+            "source":
+            {},
+            "user":
+            {
+                "ext":
+                {
+                    "eids":
+                    [
+                        {
+                            "id": "test.com",
+                            "uids":
+                            []
+                        }
+                    ]
+                },
+                "data":
+                [
+                    {
+                        "id": "optable.co",
+                        "segment":
+                        [
+                            {
+                                "id": "67f6cec4"
+                            },
+                            {
+                                "id": "4026f4f4"
+                            },
+                            {
+                                "id": "082793f9"
+                            }
+                        ]
+                    }
+                ],
+                "eids":
+                [
+                    {
+                        "inserter": "optable.co",
+                        "matcher": "optable.co",
+                        "mm": 3,
+                        "source": "optable.co",
+                        "uids":
+                        []
+                    },
+                    {
+                        "inserter": "optable.co",
+                        "matcher": "optable.co",
+                        "mm": 3,
+                        "source": "uidapi.com",
+                        "uids":
+                        []
+                    },
+                    {
+                        "inserter": "optable.co",
+                        "matcher": "optable.co",
+                        "mm": 3,
+                        "source": "criteo-hemapi.com",
+                        "uids":
+                        []
+                    }
+                ]
+            },
+            "site":
+            {
+                "domain": "localhost:9999",
+                "publisher":
+                {
+                    "domain": "localhost:9999"
+                },
+                "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                "ext":
+                {
+                    "data":
+                    {
+                        "documentLang": "en"
+                    }
+                },
+                "content":
+                {
+                    "language": "en"
+                }
+            },
+            "device":
+            {
+                "w": 1920,
+                "h": 1080,
+                "dnt": 0,
+                "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+                "language": "en",
+                "ext":
+                {
+                    "vpw": 1920,
+                    "vph": 934
+                },
+                "sua":
+                {
+                    "source": 1,
+                    "platform":
+                    {
+                        "brand": "macOS"
+                    },
+                    "browsers":
+                    [
+                        {
+                            "brand": "Not;A=Brand",
+                            "version":
+                            [
+                                "99"
+                            ]
+                        },
+                        {
+                            "brand": "Google Chrome",
+                            "version":
+                            [
+                                "139"
+                            ]
+                        },
+                        {
+                            "brand": "Chromium",
+                            "version":
+                            [
+                                "139"
+                            ]
+                        }
+                    ],
+                    "mobile": 0
+                }
+            }
+        },
+        "start": 1755699921166
+    }
+}
+{
+    "serverTimestamp": "2025-08-20T14:25:21.217Z",
+    "clientIP": "::1",
+    "eventType": "bidRequested",
+    "timestamp": "2025-08-20T14:25:21.168Z",
+    "data":
+    {
+        "bidderCode": "appnexus",
+        "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+        "bidderRequestId": "10230ea7a9f3c01968",
+        "bids":
+        [
+            {
+                "bidder": "appnexus",
+                "params":
+                {
+                    "placementId": 18349132,
+                    "publisherId": 1078346
+                },
+                "ortb2Imp":
+                {
+                    "ext":
+                    {}
+                },
+                "mediaTypes":
+                {
+                    "banner":
+                    {
+                        "sizes":
+                        [
+                            [
+                                728,
+                                90
+                            ]
+                        ]
+                    }
+                },
+                "adUnitCode": "/22081946781/web-sdk-demo-gam360/header-ad",
+                "transactionId": "825ce508-9e54-4de6-ae37-d219a68d9e96",
+                "adUnitId": "42701cf5-c864-4988-b1d9-f19421cb91bc",
+                "sizes":
+                [
+                    [
+                        728,
+                        90
+                    ]
+                ],
+                "bidId": "10245e478ee5897c2",
+                "bidderRequestId": "10230ea7a9f3c01968",
+                "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+                "src": "client",
+                "metrics":
+                {},
+                "auctionsCount": 64,
+                "bidRequestsCount": 64,
+                "bidderRequestsCount": 64,
+                "bidderWinsCount": 0,
+                "deferBilling": false,
+                "ortb2":
+                {
+                    "source":
+                    {},
+                    "user":
+                    {
+                        "ext":
+                        {
+                            "eids":
+                            [
+                                {
+                                    "id": "test.com",
+                                    "uids":
+                                    []
+                                }
+                            ]
+                        },
+                        "data":
+                        [
+                            {
+                                "id": "optable.co",
+                                "segment":
+                                [
+                                    {
+                                        "id": "67f6cec4"
+                                    },
+                                    {
+                                        "id": "4026f4f4"
+                                    },
+                                    {
+                                        "id": "082793f9"
+                                    }
+                                ]
+                            }
+                        ],
+                        "eids":
+                        [
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "optable.co",
+                                "uids":
+                                []
+                            },
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "uidapi.com",
+                                "uids":
+                                []
+                            },
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "criteo-hemapi.com",
+                                "uids":
+                                []
+                            }
+                        ]
+                    },
+                    "site":
+                    {
+                        "domain": "localhost:9999",
+                        "publisher":
+                        {
+                            "domain": "localhost:9999"
+                        },
+                        "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                        "ext":
+                        {
+                            "data":
+                            {
+                                "documentLang": "en"
+                            }
+                        },
+                        "content":
+                        {
+                            "language": "en"
+                        }
+                    },
+                    "device":
+                    {
+                        "w": 1920,
+                        "h": 1080,
+                        "dnt": 0,
+                        "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+                        "language": "en",
+                        "ext":
+                        {
+                            "vpw": 1920,
+                            "vph": 934
+                        },
+                        "sua":
+                        {
+                            "source": 1,
+                            "platform":
+                            {
+                                "brand": "macOS"
+                            },
+                            "browsers":
+                            [
+                                {
+                                    "brand": "Not;A=Brand",
+                                    "version":
+                                    [
+                                        "99"
+                                    ]
+                                },
+                                {
+                                    "brand": "Google Chrome",
+                                    "version":
+                                    [
+                                        "139"
+                                    ]
+                                },
+                                {
+                                    "brand": "Chromium",
+                                    "version":
+                                    [
+                                        "139"
+                                    ]
+                                }
+                            ],
+                            "mobile": 0
+                        }
+                    }
+                }
+            },
+            {
+                "bidder": "appnexus",
+                "params":
+                {
+                    "placementId": 18349136,
+                    "publisherId": 1078346
+                },
+                "ortb2Imp":
+                {
+                    "ext":
+                    {}
+                },
+                "mediaTypes":
+                {
+                    "banner":
+                    {
+                        "sizes":
+                        [
+                            [
+                                250,
+                                250
+                            ],
+                            [
+                                300,
+                                250
+                            ],
+                            [
+                                200,
+                                200
+                            ]
+                        ]
+                    }
+                },
+                "adUnitCode": "/22081946781/web-sdk-demo-gam360/box-ad",
+                "transactionId": "1035df2c-ef47-4638-acdd-b5c65268580f",
+                "adUnitId": "c5103bf6-2024-4453-8171-c91021fca868",
+                "sizes":
+                [
+                    [
+                        250,
+                        250
+                    ],
+                    [
+                        300,
+                        250
+                    ],
+                    [
+                        200,
+                        200
+                    ]
+                ],
+                "bidId": "10256ff0507e20be18",
+                "bidderRequestId": "10230ea7a9f3c01968",
+                "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+                "src": "client",
+                "metrics":
+                {},
+                "auctionsCount": 64,
+                "bidRequestsCount": 64,
+                "bidderRequestsCount": 64,
+                "bidderWinsCount": 0,
+                "deferBilling": false,
+                "ortb2":
+                {
+                    "source":
+                    {},
+                    "user":
+                    {
+                        "ext":
+                        {
+                            "eids":
+                            [
+                                {
+                                    "id": "test.com",
+                                    "uids":
+                                    []
+                                }
+                            ]
+                        },
+                        "data":
+                        [
+                            {
+                                "id": "optable.co",
+                                "segment":
+                                [
+                                    {
+                                        "id": "67f6cec4"
+                                    },
+                                    {
+                                        "id": "4026f4f4"
+                                    },
+                                    {
+                                        "id": "082793f9"
+                                    }
+                                ]
+                            }
+                        ],
+                        "eids":
+                        [
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "optable.co",
+                                "uids":
+                                []
+                            },
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "uidapi.com",
+                                "uids":
+                                []
+                            },
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "criteo-hemapi.com",
+                                "uids":
+                                []
+                            }
+                        ]
+                    },
+                    "site":
+                    {
+                        "domain": "localhost:9999",
+                        "publisher":
+                        {
+                            "domain": "localhost:9999"
+                        },
+                        "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                        "ext":
+                        {
+                            "data":
+                            {
+                                "documentLang": "en"
+                            }
+                        },
+                        "content":
+                        {
+                            "language": "en"
+                        }
+                    },
+                    "device":
+                    {
+                        "w": 1920,
+                        "h": 1080,
+                        "dnt": 0,
+                        "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+                        "language": "en",
+                        "ext":
+                        {
+                            "vpw": 1920,
+                            "vph": 934
+                        },
+                        "sua":
+                        {
+                            "source": 1,
+                            "platform":
+                            {
+                                "brand": "macOS"
+                            },
+                            "browsers":
+                            [
+                                {
+                                    "brand": "Not;A=Brand",
+                                    "version":
+                                    [
+                                        "99"
+                                    ]
+                                },
+                                {
+                                    "brand": "Google Chrome",
+                                    "version":
+                                    [
+                                        "139"
+                                    ]
+                                },
+                                {
+                                    "brand": "Chromium",
+                                    "version":
+                                    [
+                                        "139"
+                                    ]
+                                }
+                            ],
+                            "mobile": 0
+                        }
+                    }
+                }
+            },
+            {
+                "bidder": "appnexus",
+                "params":
+                {
+                    "placementId": 18349133,
+                    "publisherId": 1078346
+                },
+                "ortb2Imp":
+                {
+                    "ext":
+                    {}
+                },
+                "mediaTypes":
+                {
+                    "banner":
+                    {
+                        "sizes":
+                        [
+                            [
+                                728,
+                                90
+                            ]
+                        ]
+                    }
+                },
+                "adUnitCode": "/22081946781/web-sdk-demo-gam360/footer-ad",
+                "transactionId": "9e2effd4-79ee-496a-95cf-158ba19a22a2",
+                "adUnitId": "6e841d2c-0288-4518-9808-f702514641d6",
+                "sizes":
+                [
+                    [
+                        728,
+                        90
+                    ]
+                ],
+                "bidId": "1026e2fdbba694fbf8",
+                "bidderRequestId": "10230ea7a9f3c01968",
+                "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+                "src": "client",
+                "metrics":
+                {},
+                "auctionsCount": 64,
+                "bidRequestsCount": 64,
+                "bidderRequestsCount": 64,
+                "bidderWinsCount": 0,
+                "deferBilling": false,
+                "ortb2":
+                {
+                    "source":
+                    {},
+                    "user":
+                    {
+                        "ext":
+                        {
+                            "eids":
+                            [
+                                {
+                                    "id": "test.com",
+                                    "uids":
+                                    []
+                                }
+                            ]
+                        },
+                        "data":
+                        [
+                            {
+                                "id": "optable.co",
+                                "segment":
+                                [
+                                    {
+                                        "id": "67f6cec4"
+                                    },
+                                    {
+                                        "id": "4026f4f4"
+                                    },
+                                    {
+                                        "id": "082793f9"
+                                    }
+                                ]
+                            }
+                        ],
+                        "eids":
+                        [
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "optable.co",
+                                "uids":
+                                []
+                            },
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "uidapi.com",
+                                "uids":
+                                []
+                            },
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "criteo-hemapi.com",
+                                "uids":
+                                []
+                            }
+                        ]
+                    },
+                    "site":
+                    {
+                        "domain": "localhost:9999",
+                        "publisher":
+                        {
+                            "domain": "localhost:9999"
+                        },
+                        "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                        "ext":
+                        {
+                            "data":
+                            {
+                                "documentLang": "en"
+                            }
+                        },
+                        "content":
+                        {
+                            "language": "en"
+                        }
+                    },
+                    "device":
+                    {
+                        "w": 1920,
+                        "h": 1080,
+                        "dnt": 0,
+                        "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+                        "language": "en",
+                        "ext":
+                        {
+                            "vpw": 1920,
+                            "vph": 934
+                        },
+                        "sua":
+                        {
+                            "source": 1,
+                            "platform":
+                            {
+                                "brand": "macOS"
+                            },
+                            "browsers":
+                            [
+                                {
+                                    "brand": "Not;A=Brand",
+                                    "version":
+                                    [
+                                        "99"
+                                    ]
+                                },
+                                {
+                                    "brand": "Google Chrome",
+                                    "version":
+                                    [
+                                        "139"
+                                    ]
+                                },
+                                {
+                                    "brand": "Chromium",
+                                    "version":
+                                    [
+                                        "139"
+                                    ]
+                                }
+                            ],
+                            "mobile": 0
+                        }
+                    }
+                }
+            }
+        ],
+        "auctionStart": 1755699921000,
+        "timeout": 3000,
+        "refererInfo":
+        {
+            "reachedTop": true,
+            "isAmp": false,
+            "numIframes": 0,
+            "stack":
+            [
+                "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html"
+            ],
+            "topmostLocation": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+            "location": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+            "canonicalUrl": null,
+            "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+            "domain": "localhost:9999",
+            "ref": null,
+            "legacy":
+            {
+                "reachedTop": true,
+                "isAmp": false,
+                "numIframes": 0,
+                "stack":
+                [
+                    "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html"
+                ],
+                "referer": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                "canonicalUrl": null
+            }
+        },
+        "metrics":
+        {},
+        "ortb2":
+        {
+            "source":
+            {},
+            "user":
+            {
+                "ext":
+                {
+                    "eids":
+                    [
+                        {
+                            "id": "test.com",
+                            "uids":
+                            []
+                        }
+                    ]
+                },
+                "data":
+                [
+                    {
+                        "id": "optable.co",
+                        "segment":
+                        [
+                            {
+                                "id": "67f6cec4"
+                            },
+                            {
+                                "id": "4026f4f4"
+                            },
+                            {
+                                "id": "082793f9"
+                            }
+                        ]
+                    }
+                ],
+                "eids":
+                [
+                    {
+                        "inserter": "optable.co",
+                        "matcher": "optable.co",
+                        "mm": 3,
+                        "source": "optable.co",
+                        "uids":
+                        []
+                    },
+                    {
+                        "inserter": "optable.co",
+                        "matcher": "optable.co",
+                        "mm": 3,
+                        "source": "uidapi.com",
+                        "uids":
+                        []
+                    },
+                    {
+                        "inserter": "optable.co",
+                        "matcher": "optable.co",
+                        "mm": 3,
+                        "source": "criteo-hemapi.com",
+                        "uids":
+                        []
+                    }
+                ]
+            },
+            "site":
+            {
+                "domain": "localhost:9999",
+                "publisher":
+                {
+                    "domain": "localhost:9999"
+                },
+                "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                "ext":
+                {
+                    "data":
+                    {
+                        "documentLang": "en"
+                    }
+                },
+                "content":
+                {
+                    "language": "en"
+                }
+            },
+            "device":
+            {
+                "w": 1920,
+                "h": 1080,
+                "dnt": 0,
+                "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+                "language": "en",
+                "ext":
+                {
+                    "vpw": 1920,
+                    "vph": 934
+                },
+                "sua":
+                {
+                    "source": 1,
+                    "platform":
+                    {
+                        "brand": "macOS"
+                    },
+                    "browsers":
+                    [
+                        {
+                            "brand": "Not;A=Brand",
+                            "version":
+                            [
+                                "99"
+                            ]
+                        },
+                        {
+                            "brand": "Google Chrome",
+                            "version":
+                            [
+                                "139"
+                            ]
+                        },
+                        {
+                            "brand": "Chromium",
+                            "version":
+                            [
+                                "139"
+                            ]
+                        }
+                    ],
+                    "mobile": 0
+                }
+            }
+        },
+        "start": 1755699921168
+    }
+}
+{
+    "serverTimestamp": "2025-08-20T14:25:21.220Z",
+    "clientIP": "::1",
+    "eventType": "bidRequested",
+    "timestamp": "2025-08-20T14:25:21.169Z",
+    "data":
+    {
+        "bidderCode": "triplelift",
+        "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+        "bidderRequestId": "102726d7e157b4986",
+        "bids":
+        [
+            {
+                "bidder": "triplelift",
+                "params":
+                {
+                    "inventoryCode": "fnc_desk_hp_lb1"
+                },
+                "ortb2Imp":
+                {
+                    "ext":
+                    {}
+                },
+                "mediaTypes":
+                {
+                    "banner":
+                    {
+                        "sizes":
+                        [
+                            [
+                                728,
+                                90
+                            ]
+                        ]
+                    }
+                },
+                "adUnitCode": "/22081946781/web-sdk-demo-gam360/header-ad",
+                "transactionId": "825ce508-9e54-4de6-ae37-d219a68d9e96",
+                "adUnitId": "42701cf5-c864-4988-b1d9-f19421cb91bc",
+                "sizes":
+                [
+                    [
+                        728,
+                        90
+                    ]
+                ],
+                "bidId": "1028f08d8e694f6d08",
+                "bidderRequestId": "102726d7e157b4986",
+                "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+                "src": "client",
+                "metrics":
+                {},
+                "auctionsCount": 64,
+                "bidRequestsCount": 64,
+                "bidderRequestsCount": 64,
+                "bidderWinsCount": 27,
+                "deferBilling": false,
+                "ortb2":
+                {
+                    "source":
+                    {},
+                    "user":
+                    {
+                        "ext":
+                        {
+                            "eids":
+                            [
+                                {
+                                    "id": "test.com",
+                                    "uids":
+                                    []
+                                }
+                            ]
+                        },
+                        "data":
+                        [
+                            {
+                                "id": "optable.co",
+                                "segment":
+                                [
+                                    {
+                                        "id": "67f6cec4"
+                                    },
+                                    {
+                                        "id": "4026f4f4"
+                                    },
+                                    {
+                                        "id": "082793f9"
+                                    }
+                                ]
+                            }
+                        ],
+                        "eids":
+                        [
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "optable.co",
+                                "uids":
+                                []
+                            },
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "uidapi.com",
+                                "uids":
+                                []
+                            },
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "criteo-hemapi.com",
+                                "uids":
+                                []
+                            }
+                        ]
+                    },
+                    "site":
+                    {
+                        "domain": "localhost:9999",
+                        "publisher":
+                        {
+                            "domain": "localhost:9999"
+                        },
+                        "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                        "ext":
+                        {
+                            "data":
+                            {
+                                "documentLang": "en"
+                            }
+                        },
+                        "content":
+                        {
+                            "language": "en"
+                        }
+                    },
+                    "device":
+                    {
+                        "w": 1920,
+                        "h": 1080,
+                        "dnt": 0,
+                        "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+                        "language": "en",
+                        "ext":
+                        {
+                            "vpw": 1920,
+                            "vph": 934
+                        },
+                        "sua":
+                        {
+                            "source": 1,
+                            "platform":
+                            {
+                                "brand": "macOS"
+                            },
+                            "browsers":
+                            [
+                                {
+                                    "brand": "Not;A=Brand",
+                                    "version":
+                                    [
+                                        "99"
+                                    ]
+                                },
+                                {
+                                    "brand": "Google Chrome",
+                                    "version":
+                                    [
+                                        "139"
+                                    ]
+                                },
+                                {
+                                    "brand": "Chromium",
+                                    "version":
+                                    [
+                                        "139"
+                                    ]
+                                }
+                            ],
+                            "mobile": 0
+                        }
+                    }
+                }
+            },
+            {
+                "bidder": "triplelift",
+                "params":
+                {
+                    "inventoryCode": "fnc_desk_hp_mr1"
+                },
+                "ortb2Imp":
+                {
+                    "ext":
+                    {}
+                },
+                "mediaTypes":
+                {
+                    "banner":
+                    {
+                        "sizes":
+                        [
+                            [
+                                250,
+                                250
+                            ],
+                            [
+                                300,
+                                250
+                            ],
+                            [
+                                200,
+                                200
+                            ]
+                        ]
+                    }
+                },
+                "adUnitCode": "/22081946781/web-sdk-demo-gam360/box-ad",
+                "transactionId": "1035df2c-ef47-4638-acdd-b5c65268580f",
+                "adUnitId": "c5103bf6-2024-4453-8171-c91021fca868",
+                "sizes":
+                [
+                    [
+                        250,
+                        250
+                    ],
+                    [
+                        300,
+                        250
+                    ],
+                    [
+                        200,
+                        200
+                    ]
+                ],
+                "bidId": "102986a444a1fc8118",
+                "bidderRequestId": "102726d7e157b4986",
+                "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+                "src": "client",
+                "metrics":
+                {},
+                "auctionsCount": 64,
+                "bidRequestsCount": 64,
+                "bidderRequestsCount": 64,
+                "bidderWinsCount": 27,
+                "deferBilling": false,
+                "ortb2":
+                {
+                    "source":
+                    {},
+                    "user":
+                    {
+                        "ext":
+                        {
+                            "eids":
+                            [
+                                {
+                                    "id": "test.com",
+                                    "uids":
+                                    []
+                                }
+                            ]
+                        },
+                        "data":
+                        [
+                            {
+                                "id": "optable.co",
+                                "segment":
+                                [
+                                    {
+                                        "id": "67f6cec4"
+                                    },
+                                    {
+                                        "id": "4026f4f4"
+                                    },
+                                    {
+                                        "id": "082793f9"
+                                    }
+                                ]
+                            }
+                        ],
+                        "eids":
+                        [
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "optable.co",
+                                "uids":
+                                []
+                            },
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "uidapi.com",
+                                "uids":
+                                []
+                            },
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "criteo-hemapi.com",
+                                "uids":
+                                []
+                            }
+                        ]
+                    },
+                    "site":
+                    {
+                        "domain": "localhost:9999",
+                        "publisher":
+                        {
+                            "domain": "localhost:9999"
+                        },
+                        "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                        "ext":
+                        {
+                            "data":
+                            {
+                                "documentLang": "en"
+                            }
+                        },
+                        "content":
+                        {
+                            "language": "en"
+                        }
+                    },
+                    "device":
+                    {
+                        "w": 1920,
+                        "h": 1080,
+                        "dnt": 0,
+                        "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+                        "language": "en",
+                        "ext":
+                        {
+                            "vpw": 1920,
+                            "vph": 934
+                        },
+                        "sua":
+                        {
+                            "source": 1,
+                            "platform":
+                            {
+                                "brand": "macOS"
+                            },
+                            "browsers":
+                            [
+                                {
+                                    "brand": "Not;A=Brand",
+                                    "version":
+                                    [
+                                        "99"
+                                    ]
+                                },
+                                {
+                                    "brand": "Google Chrome",
+                                    "version":
+                                    [
+                                        "139"
+                                    ]
+                                },
+                                {
+                                    "brand": "Chromium",
+                                    "version":
+                                    [
+                                        "139"
+                                    ]
+                                }
+                            ],
+                            "mobile": 0
+                        }
+                    }
+                }
+            },
+            {
+                "bidder": "triplelift",
+                "params":
+                {
+                    "inventoryCode": "fnc_desk_hp_lb2"
+                },
+                "ortb2Imp":
+                {
+                    "ext":
+                    {}
+                },
+                "mediaTypes":
+                {
+                    "banner":
+                    {
+                        "sizes":
+                        [
+                            [
+                                728,
+                                90
+                            ]
+                        ]
+                    }
+                },
+                "adUnitCode": "/22081946781/web-sdk-demo-gam360/footer-ad",
+                "transactionId": "9e2effd4-79ee-496a-95cf-158ba19a22a2",
+                "adUnitId": "6e841d2c-0288-4518-9808-f702514641d6",
+                "sizes":
+                [
+                    [
+                        728,
+                        90
+                    ]
+                ],
+                "bidId": "10307bf7301bbd83c8",
+                "bidderRequestId": "102726d7e157b4986",
+                "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+                "src": "client",
+                "metrics":
+                {},
+                "auctionsCount": 64,
+                "bidRequestsCount": 64,
+                "bidderRequestsCount": 64,
+                "bidderWinsCount": 0,
+                "deferBilling": false,
+                "ortb2":
+                {
+                    "source":
+                    {},
+                    "user":
+                    {
+                        "ext":
+                        {
+                            "eids":
+                            [
+                                {
+                                    "id": "test.com",
+                                    "uids":
+                                    []
+                                }
+                            ]
+                        },
+                        "data":
+                        [
+                            {
+                                "id": "optable.co",
+                                "segment":
+                                [
+                                    {
+                                        "id": "67f6cec4"
+                                    },
+                                    {
+                                        "id": "4026f4f4"
+                                    },
+                                    {
+                                        "id": "082793f9"
+                                    }
+                                ]
+                            }
+                        ],
+                        "eids":
+                        [
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "optable.co",
+                                "uids":
+                                []
+                            },
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "uidapi.com",
+                                "uids":
+                                []
+                            },
+                            {
+                                "inserter": "optable.co",
+                                "matcher": "optable.co",
+                                "mm": 3,
+                                "source": "criteo-hemapi.com",
+                                "uids":
+                                []
+                            }
+                        ]
+                    },
+                    "site":
+                    {
+                        "domain": "localhost:9999",
+                        "publisher":
+                        {
+                            "domain": "localhost:9999"
+                        },
+                        "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                        "ext":
+                        {
+                            "data":
+                            {
+                                "documentLang": "en"
+                            }
+                        },
+                        "content":
+                        {
+                            "language": "en"
+                        }
+                    },
+                    "device":
+                    {
+                        "w": 1920,
+                        "h": 1080,
+                        "dnt": 0,
+                        "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+                        "language": "en",
+                        "ext":
+                        {
+                            "vpw": 1920,
+                            "vph": 934
+                        },
+                        "sua":
+                        {
+                            "source": 1,
+                            "platform":
+                            {
+                                "brand": "macOS"
+                            },
+                            "browsers":
+                            [
+                                {
+                                    "brand": "Not;A=Brand",
+                                    "version":
+                                    [
+                                        "99"
+                                    ]
+                                },
+                                {
+                                    "brand": "Google Chrome",
+                                    "version":
+                                    [
+                                        "139"
+                                    ]
+                                },
+                                {
+                                    "brand": "Chromium",
+                                    "version":
+                                    [
+                                        "139"
+                                    ]
+                                }
+                            ],
+                            "mobile": 0
+                        }
+                    }
+                }
+            }
+        ],
+        "auctionStart": 1755699921000,
+        "timeout": 3000,
+        "refererInfo":
+        {
+            "reachedTop": true,
+            "isAmp": false,
+            "numIframes": 0,
+            "stack":
+            [
+                "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html"
+            ],
+            "topmostLocation": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+            "location": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+            "canonicalUrl": null,
+            "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+            "domain": "localhost:9999",
+            "ref": null,
+            "legacy":
+            {
+                "reachedTop": true,
+                "isAmp": false,
+                "numIframes": 0,
+                "stack":
+                [
+                    "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html"
+                ],
+                "referer": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                "canonicalUrl": null
+            }
+        },
+        "metrics":
+        {},
+        "ortb2":
+        {
+            "source":
+            {},
+            "user":
+            {
+                "ext":
+                {
+                    "eids":
+                    [
+                        {
+                            "id": "test.com",
+                            "uids":
+                            []
+                        }
+                    ]
+                },
+                "data":
+                [
+                    {
+                        "id": "optable.co",
+                        "segment":
+                        [
+                            {
+                                "id": "67f6cec4"
+                            },
+                            {
+                                "id": "4026f4f4"
+                            },
+                            {
+                                "id": "082793f9"
+                            }
+                        ]
+                    }
+                ],
+                "eids":
+                [
+                    {
+                        "inserter": "optable.co",
+                        "matcher": "optable.co",
+                        "mm": 3,
+                        "source": "optable.co",
+                        "uids":
+                        []
+                    },
+                    {
+                        "inserter": "optable.co",
+                        "matcher": "optable.co",
+                        "mm": 3,
+                        "source": "uidapi.com",
+                        "uids":
+                        []
+                    },
+                    {
+                        "inserter": "optable.co",
+                        "matcher": "optable.co",
+                        "mm": 3,
+                        "source": "criteo-hemapi.com",
+                        "uids":
+                        []
+                    }
+                ]
+            },
+            "site":
+            {
+                "domain": "localhost:9999",
+                "publisher":
+                {
+                    "domain": "localhost:9999"
+                },
+                "page": "http://localhost:9999/integrationExamples/gpt/optableRtdProvider_example.html",
+                "ext":
+                {
+                    "data":
+                    {
+                        "documentLang": "en"
+                    }
+                },
+                "content":
+                {
+                    "language": "en"
+                }
+            },
+            "device":
+            {
+                "w": 1920,
+                "h": 1080,
+                "dnt": 0,
+                "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+                "language": "en",
+                "ext":
+                {
+                    "vpw": 1920,
+                    "vph": 934
+                },
+                "sua":
+                {
+                    "source": 1,
+                    "platform":
+                    {
+                        "brand": "macOS"
+                    },
+                    "browsers":
+                    [
+                        {
+                            "brand": "Not;A=Brand",
+                            "version":
+                            [
+                                "99"
+                            ]
+                        },
+                        {
+                            "brand": "Google Chrome",
+                            "version":
+                            [
+                                "139"
+                            ]
+                        },
+                        {
+                            "brand": "Chromium",
+                            "version":
+                            [
+                                "139"
+                            ]
+                        }
+                    ],
+                    "mobile": 0
+                }
+            }
+        },
+        "start": 1755699921169
+    }
+}
+{
+    "serverTimestamp": "2025-08-20T14:25:21.731Z",
+    "clientIP": "::1",
+    "eventType": "bidResponse",
+    "timestamp": "2025-08-20T14:25:21.671Z",
+    "data":
+    {
+        "bidderCode": "triplelift",
+        "width": 300,
+        "height": 250,
+        "adId": "10319cfaf58d94dc1",
+        "requestId": "102986a444a1fc8118",
+        "transactionId": "1035df2c-ef47-4638-acdd-b5c65268580f",
+        "adUnitId": "c5103bf6-2024-4453-8171-c91021fca868",
+        "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+        "mediaType": "banner",
+        "source": "client",
+        "cpm": 3,
+        "netRevenue": true,
+        "creativeId": "5989_32290_609112893",
+        "dealId": "",
+        "currency": "USD",
+        "ttl": 300,
+        "tl_source": "hdx",
+        "meta":
+        {
+            "advertiserName": "fiverr.com",
+            "advertiserDomains":
+            [
+                "fiverr.com"
+            ],
+            "mediaType": "banner",
+            "networkId": "5989"
+        },
+        "metrics":
+        {},
+        "adapterCode": "triplelift",
+        "originalCpm": 3,
+        "originalCurrency": "USD",
+        "deferBilling": false,
+        "deferRendering": false,
+        "responseTimestamp": 1755699921670,
+        "requestTimestamp": 1755699921169,
+        "bidder": "triplelift",
+        "adUnitCode": "/22081946781/web-sdk-demo-gam360/box-ad",
+        "timeToRespond": 501,
+        "instl": false,
+        "pbLg": "3.00",
+        "pbMg": "3.00",
+        "pbHg": "3.00",
+        "pbAg": "3.00",
+        "pbDg": "3.00",
+        "pbCg": "",
+        "size": "300x250",
+        "adserverTargeting":
+        {
+            "hb_bidder": "triplelift",
+            "hb_adid": "10319cfaf58d94dc1",
+            "hb_pb": "3.00",
+            "hb_size": "300x250",
+            "hb_source": "client",
+            "hb_format": "banner",
+            "hb_adomain": "fiverr.com",
+            "hb_dsp": "5989",
+            "hb_crid": "5989_32290_609112893"
+        }
+    }
+}
+{
+    "serverTimestamp": "2025-08-20T14:25:21.735Z",
+    "clientIP": "::1",
+    "eventType": "bidResponse",
+    "timestamp": "2025-08-20T14:25:21.673Z",
+    "data":
+    {
+        "bidderCode": "triplelift",
+        "width": 970,
+        "height": 250,
+        "adId": "10326befe98867415",
+        "requestId": "1028f08d8e694f6d08",
+        "transactionId": "825ce508-9e54-4de6-ae37-d219a68d9e96",
+        "adUnitId": "42701cf5-c864-4988-b1d9-f19421cb91bc",
+        "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+        "mediaType": "banner",
+        "source": "client",
+        "cpm": 3,
+        "netRevenue": true,
+        "creativeId": "6250_66552_710997696",
+        "dealId": "",
+        "currency": "USD",
+        "ttl": 300,
+        "tl_source": "tlx",
+        "meta":
+        {
+            "advertiserName": "Adobe Express",
+            "advertiserDomains":
+            [
+                "adobe.com"
+            ],
+            "mediaType": "native",
+            "networkId": "6250"
+        },
+        "metrics":
+        {},
+        "adapterCode": "triplelift",
+        "originalCpm": 3,
+        "originalCurrency": "USD",
+        "deferBilling": false,
+        "deferRendering": false,
+        "responseTimestamp": 1755699921672,
+        "requestTimestamp": 1755699921169,
+        "bidder": "triplelift",
+        "adUnitCode": "/22081946781/web-sdk-demo-gam360/header-ad",
+        "timeToRespond": 503,
+        "instl": false,
+        "pbLg": "3.00",
+        "pbMg": "3.00",
+        "pbHg": "3.00",
+        "pbAg": "3.00",
+        "pbDg": "3.00",
+        "pbCg": "",
+        "size": "970x250",
+        "adserverTargeting":
+        {
+            "hb_bidder": "triplelift",
+            "hb_adid": "10326befe98867415",
+            "hb_pb": "3.00",
+            "hb_size": "970x250",
+            "hb_source": "client",
+            "hb_format": "banner",
+            "hb_adomain": "adobe.com",
+            "hb_dsp": "6250",
+            "hb_crid": "6250_66552_710997696"
+        }
+    }
+}
+{
+    "serverTimestamp": "2025-08-20T14:25:22.476Z",
+    "clientIP": "::1",
+    "eventType": "bidResponse",
+    "timestamp": "2025-08-20T14:25:22.474Z",
+    "data":
+    {
+        "bidderCode": "rubicon",
+        "width": 300,
+        "height": 250,
+        "adId": "10334357316884adf8",
+        "requestId": "101817ce855141f29",
+        "transactionId": "825ce508-9e54-4de6-ae37-d219a68d9e96",
+        "adUnitId": "42701cf5-c864-4988-b1d9-f19421cb91bc",
+        "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+        "mediaType": "banner",
+        "source": "client",
+        "currency": "USD",
+        "creativeId": "2249:666110980",
+        "cpm": 1,
+        "ttl": 360,
+        "netRevenue": true,
+        "rubicon":
+        {
+            "advertiserId": 3709240,
+            "networkId": 2249
+        },
+        "meta":
+        {
+            "advertiserId": 3709240,
+            "networkId": 2249,
+            "mediaType": "video",
+            "advertiserDomains":
+            [
+                "theexcellencecollection.com"
+            ]
+        },
+        "rubiconTargeting":
+        {
+            "rpfl_elemid": "/22081946781/web-sdk-demo-gam360/header-ad"
+        },
+        "metrics":
+        {},
+        "adapterCode": "rubicon",
+        "originalCpm": 1,
+        "originalCurrency": "USD",
+        "deferBilling": false,
+        "deferRendering": false,
+        "responseTimestamp": 1755699922473,
+        "requestTimestamp": 1755699921166,
+        "bidder": "rubicon",
+        "adUnitCode": "/22081946781/web-sdk-demo-gam360/header-ad",
+        "timeToRespond": 1307,
+        "instl": false,
+        "pbLg": "1.00",
+        "pbMg": "1.00",
+        "pbHg": "1.00",
+        "pbAg": "1.00",
+        "pbDg": "1.00",
+        "pbCg": "",
+        "size": "300x250",
+        "adserverTargeting":
+        {
+            "hb_bidder": "rubicon",
+            "hb_adid": "10334357316884adf8",
+            "hb_pb": "1.00",
+            "hb_size": "300x250",
+            "hb_source": "client",
+            "hb_format": "banner",
+            "hb_adomain": "theexcellencecollection.com",
+            "hb_dsp": 2249,
+            "hb_crid": "2249:666110980"
+        }
+    }
+}
+{
+    "serverTimestamp": "2025-08-20T14:25:22.671Z",
+    "clientIP": "::1",
+    "eventType": "bidResponse",
+    "timestamp": "2025-08-20T14:25:22.669Z",
+    "data":
+    {
+        "bidderCode": "rubicon",
+        "width": 300,
+        "height": 250,
+        "adId": "1034c9bc37c209f6d8",
+        "requestId": "1019547a034d7f9c",
+        "transactionId": "1035df2c-ef47-4638-acdd-b5c65268580f",
+        "adUnitId": "c5103bf6-2024-4453-8171-c91021fca868",
+        "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+        "mediaType": "banner",
+        "source": "client",
+        "currency": "USD",
+        "creativeId": "2249:666110980",
+        "cpm": 1,
+        "ttl": 360,
+        "netRevenue": true,
+        "rubicon":
+        {
+            "advertiserId": 3709240,
+            "networkId": 2249
+        },
+        "meta":
+        {
+            "advertiserId": 3709240,
+            "networkId": 2249,
+            "mediaType": "video",
+            "advertiserDomains":
+            [
+                "theexcellencecollection.com"
+            ]
+        },
+        "rubiconTargeting":
+        {
+            "rpfl_elemid": "/22081946781/web-sdk-demo-gam360/box-ad"
+        },
+        "metrics":
+        {},
+        "adapterCode": "rubicon",
+        "originalCpm": 1,
+        "originalCurrency": "USD",
+        "deferBilling": false,
+        "deferRendering": false,
+        "responseTimestamp": 1755699922668,
+        "requestTimestamp": 1755699921166,
+        "bidder": "rubicon",
+        "adUnitCode": "/22081946781/web-sdk-demo-gam360/box-ad",
+        "timeToRespond": 1502,
+        "instl": false,
+        "pbLg": "1.00",
+        "pbMg": "1.00",
+        "pbHg": "1.00",
+        "pbAg": "1.00",
+        "pbDg": "1.00",
+        "pbCg": "",
+        "size": "300x250",
+        "adserverTargeting":
+        {
+            "hb_bidder": "rubicon",
+            "hb_adid": "1034c9bc37c209f6d8",
+            "hb_pb": "1.00",
+            "hb_size": "300x250",
+            "hb_source": "client",
+            "hb_format": "banner",
+            "hb_adomain": "theexcellencecollection.com",
+            "hb_dsp": 2249,
+            "hb_crid": "2249:666110980"
+        }
+    }
+}
+{
+    "serverTimestamp": "2025-08-20T14:25:22.831Z",
+    "clientIP": "::1",
+    "eventType": "bidResponse",
+    "timestamp": "2025-08-20T14:25:22.828Z",
+    "data":
+    {
+        "bidderCode": "rubicon",
+        "width": 300,
+        "height": 250,
+        "adId": "103561ad53d68c207",
+        "requestId": "10205528642d3987f8",
+        "transactionId": "9e2effd4-79ee-496a-95cf-158ba19a22a2",
+        "adUnitId": "6e841d2c-0288-4518-9808-f702514641d6",
+        "auctionId": "7d1cb93d-dc07-4104-96f5-cb44530e4622",
+        "mediaType": "banner",
+        "source": "client",
+        "currency": "USD",
+        "creativeId": "2249:666110980",
+        "cpm": 1,
+        "ttl": 360,
+        "netRevenue": true,
+        "rubicon":
+        {
+            "advertiserId": 3709240,
+            "networkId": 2249
+        },
+        "meta":
+        {
+            "advertiserId": 3709240,
+            "networkId": 2249,
+            "mediaType": "video",
+            "advertiserDomains":
+            [
+                "theexcellencecollection.com"
+            ]
+        },
+        "rubiconTargeting":
+        {
+            "rpfl_elemid": "/22081946781/web-sdk-demo-gam360/footer-ad"
+        },
+        "metrics":
+        {},
+        "adapterCode": "rubicon",
+        "originalCpm": 1,
+        "originalCurrency": "USD",
+        "deferBilling": false,
+        "deferRendering": false,
+        "responseTimestamp": 1755699922827,
+        "requestTimestamp": 1755699921166,
+        "bidder": "rubicon",
+        "adUnitCode": "/22081946781/web-sdk-demo-gam360/footer-ad",
+        "timeToRespond": 1661,
+        "instl": false,
+        "pbLg": "1.00",
+        "pbMg": "1.00",
+        "pbHg": "1.00",
+        "pbAg": "1.00",
+        "pbDg": "1.00",
+        "pbCg": "",
+        "size": "300x250",
+        "adserverTargeting":
+        {
+            "hb_bidder": "rubicon",
+            "hb_adid": "103561ad53d68c207",
+            "hb_pb": "1.00",
+            "hb_size": "300x250",
+            "hb_source": "client",
+            "hb_format": "banner",
+            "hb_adomain": "theexcellencecollection.com",
+            "hb_dsp": 2249,
+            "hb_crid": "2249:666110980"
+        }
+    }
+}
+{
+    "serverTimestamp": "2025-08-20T14:25:25.569Z",
+    "clientIP": "::1",
+    "eventType": "bidWon",
+    "timestamp": "2025-08-20T14:25:25.554Z",
+    "data":
+    {
+        "bidderCode": "triplelift",
+        "width": 300,
+        "height": 250,
+        "adId": "16049593f52237d",
+        "requestId": "43d560d5c9ef888",
+        "transactionId": "738b0b22-e554-4ed4-a382-b7c395585a3b",
+        "adUnitId": "fccca132-905e-4b00-b256-a977cc619411",
+        "auctionId": "86a0c1d2-06a0-4f5a-bfc6-6980eb78266e",
+        "mediaType": "banner",
+        "source": "client",
+        "cpm": 3,
+        "netRevenue": true,
+        "creativeId": "5989_32290_609112893",
+        "dealId": "",
+        "currency": "USD",
+        "ttl": 300,
+        "tl_source": "hdx",
+        "meta":
+        {
+            "advertiserName": "fiverr.com",
+            "advertiserDomains":
+            [
+                "fiverr.com"
+            ],
+            "mediaType": "banner",
+            "networkId": "5989"
+        },
+        "metrics":
+        {},
+        "adapterCode": "triplelift",
+        "originalCpm": 3,
+        "originalCurrency": "USD",
+        "deferBilling": false,
+        "deferRendering": false,
+        "responseTimestamp": 1755699923616,
+        "requestTimestamp": 1755699923383,
+        "bidder": "triplelift",
+        "adUnitCode": "/22081946781/web-sdk-demo-gam360/box-ad",
+        "timeToRespond": 233,
+        "instl": false,
+        "pbLg": "3.00",
+        "pbMg": "3.00",
+        "pbHg": "3.00",
+        "pbAg": "3.00",
+        "pbDg": "3.00",
+        "pbCg": "",
+        "size": "300x250",
+        "adserverTargeting":
+        {
+            "hb_bidder": "triplelift",
+            "hb_adid": "16049593f52237d",
+            "hb_pb": "3.00",
+            "hb_size": "300x250",
+            "hb_source": "client",
+            "hb_format": "banner",
+            "hb_adomain": "fiverr.com",
+            "hb_dsp": "5989",
+            "hb_crid": "5989_32290_609112893"
+        },
+        "latestTargetedAuctionId": "86a0c1d2-06a0-4f5a-bfc6-6980eb78266e",
+        "status": "rendered"
+    }
+}
+{
+    "serverTimestamp": "2025-08-20T14:25:25.697Z",
+    "clientIP": "::1",
+    "eventType": "bidWon",
+    "timestamp": "2025-08-20T14:25:25.665Z",
+    "data":
+    {
+        "bidderCode": "triplelift",
+        "width": 970,
+        "height": 250,
+        "adId": "17485c5a98ce4b38",
+        "requestId": "3abe628decb298",
+        "transactionId": "7109eff6-4b5f-4e24-b83b-49ea3096613d",
+        "adUnitId": "46ffbb54-0e98-48b1-a2f3-d5130e9dbf17",
+        "auctionId": "86a0c1d2-06a0-4f5a-bfc6-6980eb78266e",
+        "mediaType": "banner",
+        "source": "client",
+        "cpm": 3,
+        "netRevenue": true,
+        "creativeId": "6250_66552_710997696",
+        "dealId": "",
+        "currency": "USD",
+        "ttl": 300,
+        "tl_source": "tlx",
+        "meta":
+        {
+            "advertiserName": "Adobe Express",
+            "advertiserDomains":
+            [
+                "adobe.com"
+            ],
+            "mediaType": "native",
+            "networkId": "6250"
+        },
+        "metrics":
+        {},
+        "adapterCode": "triplelift",
+        "originalCpm": 3,
+        "originalCurrency": "USD",
+        "deferBilling": false,
+        "deferRendering": false,
+        "responseTimestamp": 1755699923621,
+        "requestTimestamp": 1755699923383,
+        "bidder": "triplelift",
+        "adUnitCode": "/22081946781/web-sdk-demo-gam360/header-ad",
+        "timeToRespond": 238,
+        "instl": false,
+        "pbLg": "3.00",
+        "pbMg": "3.00",
+        "pbHg": "3.00",
+        "pbAg": "3.00",
+        "pbDg": "3.00",
+        "pbCg": "",
+        "size": "970x250",
+        "adserverTargeting":
+        {
+            "hb_bidder": "triplelift",
+            "hb_adid": "17485c5a98ce4b38",
+            "hb_pb": "3.00",
+            "hb_size": "970x250",
+            "hb_source": "client",
+            "hb_format": "banner",
+            "hb_adomain": "adobe.com",
+            "hb_dsp": "6250",
+            "hb_crid": "6250_66552_710997696"
+        },
+        "latestTargetedAuctionId": "86a0c1d2-06a0-4f5a-bfc6-6980eb78266e",
+        "status": "rendered"
+    }
+}
+{
+    "serverTimestamp": "2025-08-20T14:25:25.866Z",
+    "clientIP": "::1",
+    "eventType": "bidWon",
+    "timestamp": "2025-08-20T14:25:25.856Z",
+    "data":
+    {
+        "bidderCode": "rubicon",
+        "width": 300,
+        "height": 250,
+        "adId": "18c8fd2a6f085938",
+        "requestId": "9e0fae4f0019868",
+        "transactionId": "db94bb8a-3ff2-4bc0-893d-7ae25bbad027",
+        "adUnitId": "9bc0b228-65a9-441a-9c25-72aa781171a4",
+        "auctionId": "86a0c1d2-06a0-4f5a-bfc6-6980eb78266e",
+        "mediaType": "banner",
+        "source": "client",
+        "currency": "USD",
+        "creativeId": "2249:666110980",
+        "cpm": 1,
+        "ttl": 360,
+        "netRevenue": true,
+        "rubicon":
+        {
+            "advertiserId": 3709240,
+            "networkId": 2249
+        },
+        "meta":
+        {
+            "advertiserId": 3709240,
+            "networkId": 2249,
+            "mediaType": "video",
+            "advertiserDomains":
+            [
+                "theexcellencecollection.com"
+            ]
+        },
+        "rubiconTargeting":
+        {
+            "rpfl_elemid": "/22081946781/web-sdk-demo-gam360/footer-ad"
+        },
+        "metrics":
+        {},
+        "adapterCode": "rubicon",
+        "originalCpm": 1,
+        "originalCurrency": "USD",
+        "deferBilling": false,
+        "deferRendering": false,
+        "responseTimestamp": 1755699924630,
+        "requestTimestamp": 1755699923384,
+        "bidder": "rubicon",
+        "adUnitCode": "/22081946781/web-sdk-demo-gam360/footer-ad",
+        "timeToRespond": 1246,
+        "instl": false,
+        "pbLg": "1.00",
+        "pbMg": "1.00",
+        "pbHg": "1.00",
+        "pbAg": "1.00",
+        "pbDg": "1.00",
+        "pbCg": "",
+        "size": "300x250",
+        "adserverTargeting":
+        {
+            "hb_bidder": "rubicon",
+            "hb_adid": "18c8fd2a6f085938",
+            "hb_pb": "1.00",
+            "hb_size": "300x250",
+            "hb_source": "client",
+            "hb_format": "banner",
+            "hb_adomain": "theexcellencecollection.com",
+            "hb_dsp": 2249,
+            "hb_crid": "2249:666110980"
+        },
+        "latestTargetedAuctionId": "86a0c1d2-06a0-4f5a-bfc6-6980eb78266e",
+        "status": "rendered"
+    }
+}
