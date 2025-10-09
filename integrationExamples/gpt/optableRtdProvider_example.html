@@ -63,7 +63,7 @@
         
         // Analytics configuration - switch between adapter and external script
         var ANALYTICS_CONFIG = {
-            useAdapter: false, // Set to true to use generic analytics adapter, false for external script
+            useAdapter: true, // Set to true to use generic analytics adapter, false for external script
             endpoint: 'http://localhost:3030/analytics',
             scriptLoadDelay: 2000 // Delay in milliseconds before loading analytics script (0 = immediate)
         };
@@ -189,6 +189,13 @@
                                         bidWon: function(args) {
                                             return {
                                                 eventType: 'bidWon',
+                                                timestamp: new Date().toISOString(),
+                                                data: window.filterData(args)
+                                            };
+                                        },
+                                        auctionEnd: function(args) {
+                                            return {
+                                                eventType: 'auctionEnd',
                                                 timestamp: new Date().toISOString(),
                                                 data: window.filterData(args)
                                             };
@@ -408,7 +415,7 @@
                             name: 'optable',
                             waitForIt: true,
                             params: {
-                                bundleUrl: "https://prebidtest.solutions.cdn.optable.co/public-assets/prebidtest-sdk.js",
+                                //bundleUrl: "https://prebidtest.solutions.cdn.optable.co/public-assets/prebidtest-sdk.js",
                                 // adserverTargeting: false,
                                 handleRtd: async (reqBidsConfigObj, optableExtraData, mergeFn) => {
                                     const optableBundle = /** @type {Object} */ (window.optable.prebidtest);
@@ -420,11 +427,11 @@
                                     // Call Optable DCN for targeting data and return the ORTB2 object
                                     const targetingData = await optableBundle.targetingFromCache();
                                     
-                                    console.warn('targetingData', targetingData);
-
                                     if (!targetingData || !targetingData.ortb2) {
                                         return;
                                     }
+
+                                    console.warn('targetingData', targetingData);
 
                                     mergeFn(
                                         reqBidsConfigObj.ortb2Fragments.global,
@@ -482,6 +489,14 @@
                 console.log('Winning Bid Bidder:', bid.bidder);
                 console.log('Winning Bid Ad Unit Code:', bid.adUnitCode);
                 console.log('Winning Bid Status:', bid.status);
+            });
+
+            pbjs.onEvent('auctionEnd', function (data) {
+                console.log('auctionEnd event fired:', data);
+                console.log('Auction ID:', data.auctionId);
+                console.log('Auction Status:', data.auctionStatus);
+                console.log('Ad Units:', data.adUnits);
+                console.log('Bid Responses:', data.bidsReceived);
             });
 
             pbjs.requestBids({
