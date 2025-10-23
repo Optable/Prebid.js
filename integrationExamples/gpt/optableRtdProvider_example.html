@@ -60,7 +60,7 @@
     <script>
         var PREBID_TIMEOUT = 3000;
         var FAILSAFE_TIMEOUT = 5000;
-        
+
         // Analytics configuration - switch between adapter and external script
         var ANALYTICS_CONFIG = {
             useAdapter: true, // Set to true to use generic analytics adapter, false for external script
@@ -321,6 +321,11 @@
                         },
                     },
                     bids: [{
+                        bidder: 'fakeadapter',
+                        params: {
+                            placementId: 'header-ad'
+                        }
+                    }, {
                         bidder: 'appnexus',
                         params: {
                             placementId: 18349132,
@@ -353,6 +358,11 @@
                         },
                     },
                     bids: [{
+                        bidder: 'fakeadapter',
+                        params: {
+                            placementId: 'box-ad'
+                        }
+                    }, {
                         bidder: 'appnexus',
                         params: {
                             placementId: 18349136,
@@ -380,6 +390,11 @@
                         },
                     },
                     bids: [{
+                        bidder: 'fakeadapter',
+                        params: {
+                            placementId: 'footer-ad'
+                        }
+                    }, {
                         bidder: 'appnexus',
                         params: {
                             placementId: 18349133,
@@ -465,8 +480,12 @@
                 console.log('bidRequested event fired:', data);
                 try {
                     window.optable.cmd.push(() => {
-                        document.getElementById('enriched-optable').style.display = 'block';
-                        document.getElementById('enriched-optable-data').textContent = JSON.stringify(data.ortb2.user, null, 2);
+                        const enrichedElement = document.getElementById('enriched-optable');
+                        const enrichedDataElement = document.getElementById('enriched-optable-data');
+                        if (enrichedElement && enrichedDataElement) {
+                            enrichedElement.style.display = 'block';
+                            enrichedDataElement.textContent = JSON.stringify(data.ortb2.user, null, 2);
+                        }
                     });
                 } catch (e) {
                     console.error('Exception while trying to display enriched data', e);
