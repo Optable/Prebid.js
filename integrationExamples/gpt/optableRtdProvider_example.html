@@ -423,6 +423,27 @@
                     postal_code: 'postal_code',
                 },
                 debug: true, // use only for testing, remove in production
+                debugging: {
+                    enabled: true,
+                    intercept: [
+                        {
+                            when: { bidder: 'appnexus' },
+                            then: { cpm: Math.floor(Math.random() * 5) + 1 }
+                        },
+                        {
+                            when: { bidder: 'rubicon' },
+                            then: { cpm: Math.floor(Math.random() * 5) + 1 }
+                        },
+                        {
+                            when: { bidder: 'triplelift' },
+                            then: { cpm: Math.floor(Math.random() * 5) + 1 }
+                        },
+                        {
+                            when: { bidder: 'sharethrough' },
+                            then: { cpm: Math.floor(Math.random() * 5) + 1 }
+                        }
+                    ]
+                },
                 realTimeData: {
                     auctionDelay: 1000, // should be set lower in production use
                     dataProviders: [
