@@ -3,6 +3,7 @@ import { registerBidder } from '../src/adapters/bidderFactory.js';
 import { BANNER, VIDEO } from '../src/mediaTypes.js';
 import { COMMON_ORTB_VIDEO_PARAMS, formatResponse } from '../libraries/deepintentUtils/index.js';
 import { addDealCustomTargetings, addPMPDeals } from '../libraries/dealUtils/dealUtils.js';
+import { getDNT } from '../libraries/dnt/index.js';
 
 const LOG_WARN_PREFIX = 'DeepIntent: ';
 const BIDDER_CODE = 'deepintent';
@@ -97,6 +98,16 @@ export const spec = {
       deepSetValue(openRtbBidRequest, 'regs.coppa', 1);
     }
 
+    // ortb2 blocking: bcat, badv (with optional params fallback)
+    const bcat = bidderRequest?.ortb2?.bcat || deepAccess(validBidRequests, '0.params.bcat');
+    const badv = bidderRequest?.ortb2?.badv || deepAccess(validBidRequests, '0.params.badv');
+    if (isArray(bcat) && bcat.length > 0) {
+      openRtbBidRequest.bcat = bcat;
+    }
+    if (isArray(badv) && badv.length > 0) {
+      openRtbBidRequest.badv = badv;
+    }
+
     injectEids(openRtbBidRequest, validBidRequests);
 
     return {
@@ -141,7 +152,7 @@ function clean(obj) {
 }
 
 function buildImpression(bid) {
-  let impression = {};
+  let impression;
   const floor = getFloor(bid);
   impression = {
     id: bid.bidId,
@@ -220,21 +231,21 @@ function buildCustomParams(bid) {
     return {
       deepintent: bid.params.custom
 
-    }
+    };
   } else {
-    return {}
+    return {};
   }
 }
 function buildUser(bid) {
   if (bid && bid.params && bid.params.user) {
     return {
-      id: bid.params.user.id && typeof bid.params.user.id == 'string' ? bid.params.user.id : undefined,
-      buyeruid: bid.params.user.buyeruid && typeof bid.params.user.buyeruid == 'string' ? bid.params.user.buyeruid : undefined,
-      yob: bid.params.user.yob && typeof bid.params.user.yob == 'number' ? bid.params.user.yob : null,
-      gender: bid.params.user.gender && typeof bid.params.user.gender == 'string' ? bid.params.user.gender : undefined,
-      keywords: bid.params.user.keywords && typeof bid.params.user.keywords == 'string' ? bid.params.user.keywords : undefined,
-      customdata: bid.params.user.customdata && typeof bid.params.user.customdata == 'string' ? bid.params.user.customdata : undefined
-    }
+      id: bid.params.user.id && typeof bid.params.user.id === 'string' ? bid.params.user.id : undefined,
+      buyeruid: bid.params.user.buyeruid && typeof bid.params.user.buyeruid === 'string' ? bid.params.user.buyeruid : undefined,
+      yob: bid.params.user.yob && typeof bid.params.user.yob === 'number' ? bid.params.user.yob : null,
+      gender: bid.params.user.gender && typeof bid.params.user.gender === 'string' ? bid.params.user.gender : undefined,
+      keywords: bid.params.user.keywords && typeof bid.params.user.keywords === 'string' ? bid.params.user.keywords : undefined,
+      customdata: bid.params.user.customdata && typeof bid.params.user.customdata === 'string' ? bid.params.user.customdata : undefined
+    };
   }
 }
 
@@ -256,14 +267,14 @@ function buildBanner(bid) {
           h: sizes[0][1],
           w: sizes[0][0],
           pos: bid && bid.params && bid.params.pos ? bid.params.pos : 0
-        }
+        };
       }
     } else {
       return {
         h: bid.params.height,
         w: bid.params.width,
         pos: bid && bid.params && bid.params.pos ? bid.params.pos : 0
-      }
+      };
     }
   }
 }
@@ -281,11 +292,11 @@ function buildDevice() {
   return {
     ua: navigator.userAgent,
     js: 1,
-    dnt: (navigator.doNotTrack == 'yes' || navigator.doNotTrack === '1') ? 1 : 0,
+    dnt: getDNT() ? 1 : 0,
     h: screen.height,
     w: screen.width,
     language: navigator.language
-  }
+  };
 }
 
 registerBidder(spec);

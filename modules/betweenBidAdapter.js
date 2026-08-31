@@ -1,7 +1,7 @@
-import {registerBidder} from '../src/adapters/bidderFactory.js';
-import {parseSizesInput} from '../src/utils.js';
+import { registerBidder } from '../src/adapters/bidderFactory.js';
+import { parseSizesInput } from '../src/utils.js';
 
-import {getAdUnitSizes} from '../libraries/sizeUtils/sizeUtils.js';
+import { getAdUnitSizes } from '../libraries/sizeUtils/sizeUtils.js';
 
 /**
  * @typedef {import('../src/adapters/bidderFactory.js').BidRequest} BidRequest
@@ -104,13 +104,13 @@ export const spec = {
         }
       }
 
-      requests.push({data: params});
-    })
+      requests.push({ data: params });
+    });
     return {
       method: 'POST',
       url: ENDPOINT,
       data: JSON.stringify(requests)
-    }
+    };
     // return requests;
   },
   /**
@@ -153,7 +153,7 @@ export const spec = {
    * @return {UserSync[]} The user syncs which should be dropped.
    */
   getUserSyncs: function(syncOptions, serverResponses) {
-    const syncs = []
+    const syncs = [];
     /* console.log(syncOptions,serverResponses)
      if (syncOptions.iframeEnabled) {
       syncs.push({
@@ -184,7 +184,7 @@ export const spec = {
     );
     return syncs;
   }
-}
+};
 
 function getUsersIds({ userIdAsEids }) {
   return (userIdAsEids && userIdAsEids.length !== 0) ? userIdAsEids : [];
@@ -194,11 +194,11 @@ function getRr() {
   try {
     var td = top.document;
     var rr = td.referrer;
-  } catch (err) { return false }
+  } catch (err) { return false; }
 
-  if (typeof rr != 'undefined' && rr.length > 0) {
+  if (typeof rr !== 'undefined' && rr.length > 0) {
     return encodeURIComponent(rr);
-  } else if (typeof rr != 'undefined' && rr == '') {
+  } else if (typeof rr !== 'undefined' && rr === '') {
     return 'direct';
   }
 }
@@ -232,7 +232,7 @@ function get_pubdata(adds) {
     let index = 0;
     let url = '';
     for(var key in adds.pubdata) {
-      if (index == 0) {
+      if (index === 0) {
         url = url + encodeURIComponent('pubside_macro[' + key + ']') + '=' + encodeURIComponent(adds.pubdata[key]);
         index++;
       } else {

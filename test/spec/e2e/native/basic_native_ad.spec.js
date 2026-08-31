@@ -13,12 +13,13 @@ const EXPECTED_TARGETING_KEYS = {
   hb_bidder: 'appnexus',
   hb_format_appnexus: 'native',
   hb_size_appnexus: '0x0'
-}
+};
 
 setupTest({
   url: TEST_PAGE_URL,
   waitFor: CREATIVE_IFRAME_CSS_SELECTOR,
-  expectGAMCreative: true
+  expectGAMCreative: true,
+  nestedIframe: false
 }, 'Prebid.js Native Ad Unit Test', function () {
   it('should load the targeting keys with correct values', async function () {
     const result = await browser.execute(function () {
@@ -28,4 +29,4 @@ setupTest({
     const targetingKeys = result['/19968336/prebid_native_example_2'];
     expect(targetingKeys).to.include(EXPECTED_TARGETING_KEYS);
   });
-})
+});

@@ -2,16 +2,16 @@ import { logWarn, isPlainObject, isStr, isArray, isFn, inIframe, mergeDeep, deep
 import { registerBidder } from '../src/adapters/bidderFactory.js';
 import { config } from '../src/config.js';
 import { BANNER } from '../src/mediaTypes.js';
+import { getDNT } from '../libraries/dnt/index.js';
 const BIDDER_CODE = 'distroscale';
 const SHORT_CODE = 'ds';
 const LOG_WARN_PREFIX = 'DistroScale: ';
 const ENDPOINT = 'https://hb.jsrdn.com/hb?from=pbjs';
 const DEFAULT_CURRENCY = 'USD';
 const AUCTION_TYPE = 1;
-const GVLID = 754;
 const UNDEF = undefined;
 
-const SUPPORTED_MEDIATYPES = [ BANNER ];
+const SUPPORTED_MEDIATYPES = [BANNER];
 
 function _getHost(url) {
   const a = document.createElement('a');
@@ -72,13 +72,13 @@ function _createImpressionObject(bid) {
       addSize(bid.mediaTypes[BANNER].sizes[i]);
     }
   }
-  if (sizesCount == 0) {
+  if (sizesCount === 0) {
     logWarn(LOG_WARN_PREFIX + 'Error: missing sizes: ' + bid.params.adUnit + '. Ignoring the banner impression in the adunit.');
   } else {
     // Use the first preferred size
     var keys = Object.keys(sizes);
     keys.sort(function(a, b) {
-      return sizes[a].idx - sizes[b].idx
+      return sizes[a].idx - sizes[b].idx;
     });
     var bannerObj = {
       pos: 0,
@@ -115,7 +115,6 @@ function _createImpressionObject(bid) {
 
 export const spec = {
   code: BIDDER_CODE,
-  gvlid: GVLID,
   supportedMediaTypes: SUPPORTED_MEDIATYPES,
   aliases: [SHORT_CODE],
 
@@ -140,7 +139,7 @@ export const spec = {
         if (win.vx.cs_loaded) {
           dsloaded = 1;
         }
-        if (win != win.parent) {
+        if (win !== win.parent) {
           win = win.parent;
         } else {
           break;
@@ -163,7 +162,7 @@ export const spec = {
         h: screen.height,
         w: screen.width,
         language: (navigator.language && navigator.language.replace(/-.*/, '')) || 'en',
-        dnt: (navigator.doNotTrack == '1' || navigator.msDoNotTrack == '1' || navigator.doNotTrack == 'yes') ? 1 : 0
+        dnt: getDNT() ? 1 : 0
       },
       imp: [],
       user: {},
@@ -180,7 +179,7 @@ export const spec = {
       }
     });
 
-    if (payload.imp.length == 0) {
+    if (payload.imp.length === 0) {
       return;
     }
 
@@ -221,10 +220,10 @@ export const spec = {
     // First Party Data
     const commonFpd = bidderRequest.ortb2 || {};
     if (commonFpd.site) {
-      mergeDeep(payload, {site: commonFpd.site});
+      mergeDeep(payload, { site: commonFpd.site });
     }
     if (commonFpd.user) {
-      mergeDeep(payload, {user: commonFpd.user});
+      mergeDeep(payload, { user: commonFpd.user });
     }
 
     // User IDs

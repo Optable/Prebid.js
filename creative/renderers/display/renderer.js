@@ -1,6 +1,15 @@
-import {ERROR_NO_AD} from './constants.js';
+import { registerReportingObserver } from '../../reporting.js';
+import { BROWSER_INTERVENTION, MESSAGE_EVENT } from '../../constants.js';
+import { ERROR_NO_AD } from './constants.js';
 
-export function render({ad, adUrl, width, height, instl}, {mkFrame}, win) {
+export function render({ ad, adUrl, width, height, instl }, { mkFrame, sendMessage }, win) {
+  registerReportingObserver((report) => {
+    sendMessage(MESSAGE_EVENT, {
+      event: BROWSER_INTERVENTION,
+      intervention: report
+    });
+  }, ['intervention']);
+
   if (!ad && !adUrl) {
     const err = new Error('Missing ad markup or URL');
     err.reason = ERROR_NO_AD;
@@ -15,7 +24,7 @@ export function render({ad, adUrl, width, height, instl}, {mkFrame}, win) {
         });
     }
     const doc = win.document;
-    const attrs = {width: width ?? '100%', height: height ?? '100%'};
+    const attrs = { width: width ?? '100%', height: height ?? '100%' };
     if (adUrl && !ad) {
       attrs.src = adUrl;
     } else {
@@ -27,6 +36,21 @@ export function render({ad, adUrl, width, height, instl}, {mkFrame}, win) {
       const style = win.frameElement.style;
       style.width = width ? `${width}px` : '100vw';
       style.height = height ? `${height}px` : '100vh';
+
+      const container = win.parent?.document?.querySelector('div#creative');
+      const box = win.parent?.document?.querySelector('div#ad_position_box');
+      const containerStyle = container && win.parent?.getComputedStyle?.(container);
+      const boxStyle = box && win.parent?.getComputedStyle?.(box);
+      if (
+        container?.parentElement === box &&
+        containerStyle?.marginTop && containerStyle?.marginTop !== '0px' &&
+        boxStyle && boxStyle?.alignItems === 'flex-start'
+      ) {
+        // GAME_MANUAL_INTERSTITIAL uses different styling on mobile, which doesn't work with our resizing;
+        // this resets it to the same style used on desktop
+        container.style.marginTop = '0px';
+        box.style.alignItems = 'center';
+      }
     }
   }
 }

@@ -31,7 +31,7 @@ export function getUserSyncs(syncEndpoint, paramNames) {
     }
 
     return syncs;
-  }
+  };
 }
 
 export function sspInterpretResponse(ttl, adomain) {
@@ -53,7 +53,7 @@ export function sspInterpretResponse(ttl, adomain) {
       [width, height] = sizes;
     }
 
-    if (body.type.format != '') {
+    if (body.type.format !== '') {
       // banner
       ad = body.content.data;
       if (body.content.imps?.length) {
@@ -97,7 +97,7 @@ export function sspInterpretResponse(ttl, adomain) {
     }
 
     return bidResponses;
-  }
+  };
 }
 
 export function sspBuildRequests(defaultEndpoint) {
@@ -119,7 +119,7 @@ export function sspBuildRequests(defaultEndpoint) {
     }
 
     return requests;
-  }
+  };
 }
 
 export function sspValidRequest(bid) {

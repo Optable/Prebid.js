@@ -1,4 +1,4 @@
-import { isArray, logError, logWarn, pick } from '../src/utils.js';
+import { isArray, logError, logWarn, pick, isFn } from '../src/utils.js';
 import adapter from '../libraries/analyticsAdapter/AnalyticsAdapter.js';
 import adapterManager from '../src/adapterManager.js';
 import { BID_STATUS, STATUS, REJECTION_REASON } from '../src/constants.js';
@@ -30,15 +30,15 @@ const TIMEOUT_ERROR = 'timeout-error';
 const CURRENCY_USD = 'USD';
 const BID_PRECISION = 2;
 const EMPTY_STRING = '';
-// todo: input profileId and profileVersionId ; defaults to zero or one
-const DEFAULT_PUBLISHER_ID = 0;
-const DEFAULT_PROFILE_ID = 0;
-const DEFAULT_PROFILE_VERSION_ID = 0;
+// Default values for IDs - standardized as strings
+const DEFAULT_PUBLISHER_ID = null; // null since publisherId is mandatory
+const DEFAULT_PROFILE_ID = '0';
+const DEFAULT_PROFILE_VERSION_ID = '0';
 
 /// /////////// VARIABLES //////////////
-let publisherId = DEFAULT_PUBLISHER_ID; // int: mandatory
-let profileId = DEFAULT_PROFILE_ID; // int: optional
-let profileVersionId = DEFAULT_PROFILE_VERSION_ID; // int: optional
+let publisherId = DEFAULT_PUBLISHER_ID; // string: mandatory
+let profileId = DEFAULT_PROFILE_ID; // string: optional
+let profileVersionId = DEFAULT_PROFILE_VERSION_ID; // string: optional
 let s2sBidders = [];
 let _country = '';
 
@@ -93,7 +93,8 @@ function sendAjaxRequest({ endpoint, method, queryParams = '', body = null }) {
   return ajax(url, null, body, { method });
 };
 
-function copyRequiredBidDetails(bid) {
+function copyRequiredBidDetails(bid, bidRequest) {
+  // First check if bid has mediaTypes/sizes, otherwise fallback to bidRequest
   return pick(bid, [
     'bidder',
     'bidderCode',
@@ -138,7 +139,7 @@ function parseBidResponse(bid) {
         return window.parseFloat(Number(bid.getCpmInNewCurrency(CURRENCY_USD)).toFixed(BID_PRECISION));
       }
       logWarn(LOG_PRE_FIX + 'Could not determine the Net cpm in USD for the bid thus using bid.cpm', bid);
-      return bid.cpm
+      return bid.cpm;
     },
     'bidGrossCpmUSD', () => {
       if (typeof bid.originalCurrency === 'string' && bid.originalCurrency.toUpperCase() === CURRENCY_USD) {
@@ -149,7 +150,7 @@ function parseBidResponse(bid) {
         return window.parseFloat(Number(getGlobal().convertCurrency(bid.originalCpm, bid.originalCurrency, CURRENCY_USD)).toFixed(BID_PRECISION));
       }
       logWarn(LOG_PRE_FIX + 'Could not determine the Gross cpm in USD for the bid, thus using bid.originalCpm', bid);
-      return bid.originalCpm
+      return bid.originalCpm;
     },
     'dealId',
     'currency',
@@ -180,7 +181,7 @@ function getAdapterNameForAlias(aliasName) {
 }
 
 function isS2SBidder(bidder) {
-  return (s2sBidders.indexOf(bidder) > -1) ? 1 : 0
+  return (s2sBidders.indexOf(bidder) > -1) ? 1 : 0;
 }
 
 function isOWPubmaticBid(adapterName) {
@@ -191,11 +192,12 @@ function isOWPubmaticBid(adapterName) {
       conf.bidders.indexOf(ADAPTER_CODE) > -1) {
       return true;
     }
-  })
+    return false;
+  });
 }
 
 function getAdUnit(adUnits, adUnitId) {
-  return adUnits.filter(adUnit => (adUnit.divID && adUnit.divID == adUnitId) || (adUnit.code == adUnitId))[0];
+  return adUnits.filter(adUnit => (adUnit.divID && adUnit.divID === adUnitId) || (adUnit.code === adUnitId))[0];
 }
 
 function getTgId() {
@@ -231,6 +233,7 @@ function getFeatureLevelDetails(auctionCache) {
 
 function getListOfIdentityPartners() {
   const namespace = getGlobal();
+  if (!isFn(namespace.getUserIds)) return;
   const publisherProvidedEids = namespace.getConfig("ortb2.user.eids") || [];
   const availableUserIds = namespace.getUserIds() || {};
   const identityModules = namespace.getConfig('userSync')?.userIds || [];
@@ -267,8 +270,8 @@ function getRootLevelDetails(auctionCache, auctionId) {
     tgid: getTgId(),
     s2sls: s2sBidders,
     dm: DISPLAY_MANAGER,
-    dmv: '$prebid.version$' || '-1'
-  }
+    dmv: '$prebid.version$'
+  };
 }
 
 function executeBidsLoggerCall(event, highestCpmBids) {
@@ -291,7 +294,7 @@ function executeBidsLoggerCall(event, highestCpmBids) {
         let adapterName = getAdapterNameForAlias(bid.adapterCode || bid.bidder);
         bid.adapterName = adapterName;
         bid.bidder = adapterName;
-      })
+      });
     }
   });
 
@@ -385,7 +388,7 @@ const eventHandlers = {
     cacheEntry.floorData = {};
     cacheEntry.origAdUnits = args.adUnits;
     cacheEntry.referer = args.bidderRequests[0].refererInfo.topmostLocation;
-    cacheEntry.ortb2 = args.bidderRequests[0].ortb2
+    cacheEntry.ortb2 = args.bidderRequests[0].ortb2;
     cache.auctions[args.auctionId] = cacheEntry;
   },
 
@@ -405,7 +408,7 @@ const eventHandlers = {
       if (bid.floorData) {
         cache.auctions[args.auctionId].floorData['floorRequestData'] = bid.floorData;
       }
-    })
+    });
   },
 
   bidResponse: (args) => {
@@ -423,6 +426,15 @@ const eventHandlers = {
     if ((bid.bidder && args.bidderCode && bid.bidder !== args.bidderCode) || (bid.bidder === args.bidderCode && bid.status === SUCCESS)) {
       if (bid.params) {
         args.params = bid.params;
+      }
+      if (bid.adUnit) {
+        // Specifically check for mediaTypes and dimensions
+        if (!args.mediaTypes && bid.adUnit.mediaTypes) {
+          args.mediaTypes = bid.adUnit.mediaTypes;
+        }
+        if (!args.sizes && bid.adUnit.dimensions) {
+          args.sizes = bid.adUnit.dimensions;
+        }
       }
       bid = copyRequiredBidDetails(args);
       cache.auctions[args.auctionId].adUnitCodes[args.adUnitCode].bids[requestId].push(bid);
@@ -508,29 +520,27 @@ const eventHandlers = {
       }
     });
   }
-}
+};
 
 /// /////////// ADAPTER DEFINITION //////////////
 
-const baseAdapter = adapter({analyticsType: 'endpoint'});
+const baseAdapter = adapter({ analyticsType: 'endpoint' });
 const pubmaticAdapter = Object.assign({}, baseAdapter, {
 
   enableAnalytics(conf = {}) {
     let error = false;
 
     if (typeof conf.options === 'object') {
-      if (conf.options.publisherId) {
-        publisherId = Number(conf.options.publisherId);
-      }
-      profileId = Number(conf.options.profileId) || DEFAULT_PROFILE_ID;
-      profileVersionId = Number(conf.options.profileVersionId) || DEFAULT_PROFILE_VERSION_ID;
+      publisherId = String(conf.options.publisherId || '').trim();
+      profileId = String(conf.options.profileId || '').trim() || DEFAULT_PROFILE_ID;
+      profileVersionId = String(conf.options.profileVersionId || '').trim() || DEFAULT_PROFILE_VERSION_ID;
     } else {
       logError(LOG_PRE_FIX + 'Config not found.');
       error = true;
     }
 
     if (!publisherId) {
-      logError(LOG_PRE_FIX + 'Missing publisherId(Number).');
+      logError(LOG_PRE_FIX + 'Missing publisherId.');
       error = true;
     }
 
